@@ -129,11 +129,13 @@
     h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; }
 
     /* HERO */
-    #home {
+    .home {
       min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 0 60px;
-      position: relative; overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 60px; /* Added padding */
+      position: relative;
+      overflow: hidden;
     }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
@@ -148,7 +150,29 @@
         linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
       background-size: 60px 60px;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 900px; }
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-image {
+      max-width: 45%;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 10px;
       background: rgba(232,255,71,0.08); border: 1px solid rgba(232,255,71,0.2);
@@ -559,7 +583,7 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#home" class="nav-logo">Alex<span>.</span>Reeve</a>
+  <a href="#home" class="nav-logo">JOYONTO<span>.</span>THE DESIGNER</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#case-studies">Work</a></li>
@@ -577,46 +601,46 @@
   <div class="hero-bg"></div>
   <div class="hero-grid-lines"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">
-      <span class="dot"></span>
-      Available for freelance projects — 2026
+    <div class="hero-text">
+      <h1 class="hero-title">
+        Design that<br>
+        <em>converts.</em><br>
+        <span class="stroke">Growth that</span>
+      </h1>
+      <p class="hero-desc">
+        I'm a UI/UX designer & performance marketer who builds products people love and campaigns that deliver measurable ROI. From zero to 1M+ downloads — I've done it.
+      </p>
+      <div class="hero-actions">
+        <a href="#case-studies" class="btn-primary">
+          View My Work
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn-secondary">
+          Start a Project
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">1M<span>+</span></div>
+          <div class="stat-label">App Downloads</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4.7<span>×</span></div>
+          <div class="stat-label">Avg. ROAS</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">$2M<span>+</span></div>
+          <div class="stat-label">Ad Spend Managed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3<span>+</span></div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
     </div>
-    <h1 class="hero-title">
-      Design that<br>
-      <em>converts.</em><br>
-      <span class="stroke">Growth that</span><br>
-      scales.
-    </h1>
-    <p class="hero-desc">
-      I'm a UI/UX designer & performance marketer who builds products people love and campaigns that deliver measurable ROI. From zero to 1M+ downloads — I've done it.
-    </p>
-    <div class="hero-actions">
-      <a href="#case-studies" class="btn-primary">
-        View My Work
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#contact" class="btn-secondary">
-        Start a Project
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">1M<span>+</span></div>
-        <div class="stat-label">App Downloads</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">4.7<span>×</span></div>
-        <div class="stat-label">Avg. ROAS</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">$2M<span>+</span></div>
-        <div class="stat-label">Ad Spend Managed</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">3<span>+</span></div>
-        <div class="stat-label">Years Experience</div>
-      </div>
+    <div class="hero-image">
+      <img src="joyonto_rozario.png" alt="Joyonto Rozario" />
     </div>
   </div>
   <div class="hero-scroll">
