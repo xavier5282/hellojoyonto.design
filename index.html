@@ -433,7 +433,14 @@
     .service-list li::before { content: '—'; color: var(--accent); font-weight: 700; }
 
     /* BLOG */
-    #blog { background: var(--bg); }
+    .blog {
+      background: var(--bg);
+     }
+     .blog-author {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 12px;
+    }
     .blog-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
     .blog-header h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
     .blog-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2px; }
@@ -745,8 +752,11 @@
       <div class="case-card case-v1 reveal">
         <div class="case-inner">
           <div class="case-visual">
-            <div class="case-visual-num">01</div>
-            <div class="case-icon">📱</div>
+            <div class="blog-visual">
+              <div class="blog-visual-inner">
+                <img src="app.png" alt="Thumbnail Image" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+            </div>
           </div>
           <div class="case-body">
             <div>
@@ -755,7 +765,7 @@
                 <span class="case-tag green">UI/UX Design</span>
                 <span class="case-tag green">Growth</span>
               </div>
-              <h3>Scaling a Fitness App from 0 to 1 Million Downloads</h3>
+              <h3>Secure Super VPN App from 117 to 1 Million Downloads</h3>
               <p>FitFlow came to me with a functional app and a flat growth curve. I redesigned the onboarding experience, rebuilt the core workout tracking UI, and launched a targeted UA campaign — transforming it into a top-charting fitness app within 8 months.</p>
               <div class="case-results">
                 <div class="result-item">
@@ -965,22 +975,25 @@
       <a href="#contact" class="blog-card featured">
         <div>
           <div class="blog-visual">
-            <div class="blog-visual-inner">📱</div>
+            <div class="blog-visual-inner">
+              <img src="blog.png" alt="Blog Visual" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
           </div>
           <div class="blog-cat">Mobile App Growth</div>
-          <h3>How We Took a Fitness App from 0 to 1M Downloads in 8 Months: A Full Breakdown</h3>
+          <h3>How We Took a Pinominos Game App UI from 0 to 1M Downloads in 8 Months: A Full Breakdown</h3>
           <p>The complete playbook — from redesigning the onboarding flow to building a Meta UA strategy that scaled without killing ROAS. Including the three experiments that changed everything.</p>
+          <!-- Added Author Name -->
+          <div class="blog-author">By <strong>Joyonto Rozario</strong></div>
         </div>
         <div class="blog-meta">
           <span class="blog-date">April 12, 2026</span>
           <span class="blog-read">12 min read →</span>
         </div>
       </a>
-
       <a href="#contact" class="blog-card">
         <div>
           <div class="blog-cat">Performance Marketing</div>
-          <h3>The Google Ads Structure That Cut Our CPA by 44%</h3>
+          <h3>The Meta Ads Structure That Growth Our Sell by 44%</h3>
           <p>Most SaaS companies are throwing money into broad match. Here's the campaign architecture that actually converts.</p>
         </div>
         <div class="blog-meta">
