@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UI/UX Designer & Performance Marketer who scaled a mobile app to 1M+ downloads and builds high-converting digital experiences. Available for freelance projects." />
+  <meta name="keywords" content="UI UX designer, performance marketer, Google Ads, Meta Ads, app design, mobile app, streetwear brand, conversion optimization" />
+  <meta property="og:title" content="Joyonto Rozario — UI/UX Designer & Performance Marketer" />
+  <meta property="og:description" content="Scaled apps to 1M+ downloads. Built a streetwear brand from zero. Engineered performance ad campaigns with measurable ROI." />
+  <title>Joyonto Rozario — UI/UX Designer & Performance Marketer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Bentham&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #080808;
+      --surface: #111111;
+      --surface2: #181818;
+      --border: rgba(255,255,255,0.07);
+      --text: #f0ede8;
+      --muted: #888;
+      --accent: #47ffe6;
+      --accent2: #ff6b35;
+      --accent3: #7eb8f7;
+      --radius: 2px;
+      --font-display: 'lato', sans-serif;
+      --font-body: 'Bentham', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* CUSTOM CURSOR */
+    .cursor {
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s, width 0.2s, height 0.2s, opacity 0.2s;
+    }
+    .cursor-ring {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(232,255,71,0.4);
+      border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.18s ease, width 0.3s, height 0.3s;
+    }
+    .cursor.hover { width: 16px; height: 16px; }
+    .cursor-ring.hover { width: 56px; height: 56px; border-color: rgba(232,255,71,0.2); }
+
+    /* NOISE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9997; opacity: 0.5;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 60px;
+      background: transparent;
+      transition: background 0.4s, backdrop-filter 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(8,8,8,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 800; font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      color: var(--text); text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0;
+      width: 0; height: 1px; background: var(--accent);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      padding: 10px 22px;
+      border: 1px solid var(--accent);
+      color: var(--accent) !important;
+      border-radius: var(--radius);
+      font-size: 0.8rem !important;
+      transition: background 0.2s, color 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent) !important; color: var(--bg) !important; }
+    .nav-cta:hover::after { display: none; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--text); transition: 0.3s; }
+
+    /* SECTIONS */
+    section { padding: 120px 60px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 16px; display: block;
+    }
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; }
+
+    /* HERO */
+    #home {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 0 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(232,255,71,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,107,53,0.04) 0%, transparent 50%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 900px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(232,255,71,0.08); border: 1px solid rgba(232,255,71,0.2);
+      padding: 6px 16px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 500; color: var(--accent);
+      margin-bottom: 36px;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-eyebrow .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.95;
+      margin-bottom: 32px;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+    .hero-title em { font-style: normal; color: var(--accent); }
+    .hero-title .stroke {
+      -webkit-text-stroke: 1px rgba(240,237,232,0.4);
+      color: transparent;
+    }
+    .hero-desc {
+      font-size: 1.15rem; font-weight: 300; color: #aaa;
+      max-width: 540px; line-height: 1.75;
+      margin-bottom: 48px;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .hero-actions {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--accent); color: var(--bg);
+      padding: 16px 32px; font-family: var(--font-display);
+      font-weight: 700; font-size: 0.9rem; letter-spacing: 0.01em;
+      text-decoration: none; border-radius: var(--radius);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,255,71,0.25); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--text); font-size: 0.9rem; font-weight: 500;
+      text-decoration: none; padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--accent); border-color: var(--accent); }
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 80px;
+      padding-top: 48px; border-top: 1px solid var(--border);
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: var(--font-display); font-size: 2.4rem; font-weight: 800;
+      color: var(--text); line-height: 1;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .hero-scroll {
+      position: absolute; bottom: 40px; right: 60px;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: var(--muted); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      animation: fadeUp 0.8s 0.6s ease both;
+    }
+    .scroll-line {
+      width: 1px; height: 60px;
+      background: linear-gradient(var(--accent), transparent);
+      animation: scrollLine 2s infinite;
+    }
+    @keyframes scrollLine { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+
+    /* MARQUEE */
+    .marquee-section {
+      padding: 28px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      overflow: hidden; background: var(--surface);
+    }
+    .marquee-track {
+      display: flex; gap: 48px; width: max-content;
+      animation: marquee 24s linear infinite;
+    }
+    .marquee-item {
+      display: flex; align-items: center; gap: 16px;
+      font-family: var(--font-display); font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+      white-space: nowrap;
+    }
+    .marquee-item .dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* ABOUT */
+    #about { background: var(--surface); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .about-image {
+      position: relative;
+    }
+    .about-img-frame {
+      aspect-ratio: 3/4;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+      border-radius: 4px;
+    }
+    .about-img-photo {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .about-img-pattern {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(232,255,71,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255,107,53,0.06) 0%, transparent 40%);
+    }
+    .about-img-dots {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .about-img-text {
+      position: absolute; bottom: 32px; left: 32px; right: 32px;
+      font-family: var(--font-display); font-size: 4rem; font-weight: 800;
+      line-height: 1; color: rgba(255,255,255,0.05);
+      letter-spacing: -0.04em;
+    }
+    .about-badge {
+      position: absolute; top: -16px; right: -16px;
+      background: var(--accent); color: var(--bg);
+      padding: 10px 18px; font-family: var(--font-display); font-weight: 700;
+      font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;
+      border-radius: var(--radius);
+    }
+    .about-content h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 24px; }
+    .about-content p { color: #aaa; line-height: 1.8; margin-bottom: 20px; font-size: 1.05rem; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .tag {
+      padding: 7px 16px; border: 1px solid var(--border);
+      font-size: 0.78rem; color: var(--muted); border-radius: 100px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tag:hover { border-color: var(--accent); color: var(--accent); }
+    .about-numbers {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px;
+    }
+    .about-num-item {
+      padding: 20px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px;
+    }
+    .about-num-item .num {
+      font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--accent);
+    }
+    .about-num-item .desc { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+
+    /* CASE STUDIES */
+    #case-studies { background: var(--bg); }
+    .cases-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; }
+    .cases-header h2 { font-size: clamp(2rem, 4vw, 3.2rem); max-width: 500px; }
+    .case-grid { display: flex; flex-direction: column; gap: 2px; }
+    .case-card {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 0; overflow: hidden;
+      transition: border-color 0.3s;
+      position: relative;
+    }
+    .case-card:hover { border-color: rgba(232,255,71,0.3); }
+    .case-inner {
+      display: grid; grid-template-columns: 1fr 2fr; min-height: 320px;
+    }
+    .case-visual {
+      background: var(--surface2); padding: 48px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      border-right: 1px solid var(--border);
+    }
+    .case-visual-num {
+      font-family: var(--font-display); font-size: 8rem; font-weight: 800;
+      color: rgba(255,255,255,0.04); position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      line-height: 1; white-space: nowrap;
+    }
+    .case-icon {
+      width: 80px; height: 80px; position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .case-v1 .case-visual { background: linear-gradient(135deg, #0d1a0a 0%, #111 100%); }
+    .case-v2 .case-visual { background: linear-gradient(135deg, #1a0d0a 0%, #111 100%); }
+    .case-v3 .case-visual { background: linear-gradient(135deg, #0a0d1a 0%, #111 100%); }
+    .case-body { padding: 48px; display: flex; flex-direction: column; justify-content: space-between; }
+    .case-meta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+    .case-tag {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 100px;
+    }
+    .case-tag.green { background: rgba(232,255,71,0.1); color: var(--accent); }
+    .case-tag.orange { background: rgba(255,107,53,0.1); color: var(--accent2); }
+    .case-tag.blue { background: rgba(126,184,247,0.1); color: var(--accent3); }
+    .case-body h3 { font-size: 1.9rem; margin-bottom: 16px; line-height: 1.15; }
+    .case-body p { color: #999; line-height: 1.75; margin-bottom: 28px; font-size: 0.95rem; }
+    .case-results {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px;
+    }
+    .result-item { border-left: 2px solid var(--border); padding-left: 16px; }
+    .result-num {
+      font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; line-height: 1;
+    }
+    .result-num.accent { color: var(--accent); }
+    .result-num.orange { color: var(--accent2); }
+    .result-num.blue { color: var(--accent3); }
+    .result-label { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+    .case-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent); font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+      transition: gap 0.2s;
+    }
+    .case-link:hover { gap: 14px; }
+    .case-arrow { transition: transform 0.2s; }
+    .case-link:hover .case-arrow { transform: translateX(4px); }
+
+    /* SERVICES */
+    #services { background: var(--surface); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      margin-top: 64px;
+    }
+    .service-card {
+      background: var(--bg); border: 1px solid var(--border);
+      padding: 40px 36px;
+      transition: background 0.3s, border-color 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .service-card:hover { background: var(--surface2); border-color: rgba(232,255,71,0.2); }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: transparent; transition: background 0.3s;
+    }
+    .service-card:hover::before { background: var(--accent); }
+    .service-num {
+      font-family: var(--font-display); font-size: 0.72rem; font-weight: 700;
+      color: var(--accent); letter-spacing: 0.1em; margin-bottom: 28px; display: block;
+    }
+    .service-icon { font-size: 2rem; margin-bottom: 20px; display: block; }
+    .service-card h3 { font-size: 1.3rem; margin-bottom: 14px; }
+    .service-card p { color: #888; font-size: 0.9rem; line-height: 1.7; margin-bottom: 28px; }
+    .service-list { list-style: none; }
+    .service-list li {
+      font-size: 0.82rem; color: var(--muted); padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .service-list li:last-child { border-bottom: none; }
+    .service-list li::before { content: '—'; color: var(--accent); font-weight: 700; }
+
+    /* BLOG */
+    #blog { background: var(--bg); }
+    .blog-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+    .blog-header h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+    .blog-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2px; }
+    .blog-card {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 36px; display: flex; flex-direction: column; justify-content: space-between;
+      transition: border-color 0.3s; text-decoration: none; color: var(--text);
+    }
+    .blog-card:hover { border-color: rgba(232,255,71,0.3); }
+    .blog-card.featured { grid-row: span 2; padding: 48px; }
+    .blog-cat {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px;
+    }
+    .blog-card h3 { font-size: 1.25rem; margin-bottom: 16px; line-height: 1.3; }
+    .blog-card.featured h3 { font-size: 1.8rem; }
+    .blog-card p { color: #888; font-size: 0.88rem; line-height: 1.65; flex: 1; }
+    .blog-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border);
+    }
+    .blog-date { font-size: 0.75rem; color: var(--muted); }
+    .blog-read {
+      font-size: 0.75rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .blog-visual {
+      height: 160px; background: var(--surface2); margin-bottom: 28px;
+      border-radius: 2px; position: relative; overflow: hidden;
+    }
+    .blog-visual-inner {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; opacity: 0.4;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--surface);
+      position: relative; overflow: hidden;
+    }
+    .contact-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(232,255,71,0.04) 0%, transparent 60%);
+    }
+    .contact-inner { position: relative; z-index: 1; text-align: center; max-width: 700px; margin: 0 auto; }
+    .contact-inner h2 {
+      font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 24px;
+    }
+    .contact-inner h2 em { font-style: normal; color: var(--accent); }
+    .contact-inner p { color: #888; font-size: 1.1rem; line-height: 1.75; margin-bottom: 48px; }
+    .contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border: 1px solid var(--border);
+      color: var(--text); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      border-radius: var(--radius); transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(232,255,71,0.05); }
+    .contact-link.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 700; }
+    .contact-link.primary:hover { background: #d4eb30; border-color: #d4eb30; color: var(--bg); }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg); padding: 48px 60px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo { font-family: var(--font-display); font-weight: 800; font-size: 1rem; }
+    .footer-logo span { color: var(--accent); }
+    .footer-copy { font-size: 0.8rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 80px 24px; }
+      #home { padding: 0 24px; }
+      .hero-title { font-size: clamp(2.4rem, 9vw, 4rem); }
+      .hero-stats { gap: 28px; flex-wrap: wrap; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .case-inner { grid-template-columns: 1fr; min-height: auto; }
+      .case-visual { display: none; }
+      .case-results { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card.featured { grid-row: auto; }
+      footer { flex-direction: column; gap: 20px; text-align: center; }
+      .footer-links { justify-content: center; }
+      .hero-scroll { display: none; }
+      .cases-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .blog-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      body { cursor: auto; }
+      .cursor, .cursor-ring { display: none; }
+      .about-numbers { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .case-results { grid-template-columns: repeat(2, 1fr); }
+      .about-numbers { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* MOBILE NAV OPEN */
+    .nav-mobile {
+      display: none; position: fixed; inset: 0; z-index: 99;
+      background: var(--bg); flex-direction: column; align-items: center; justify-content: center;
+      gap: 32px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-display); font-size: 2.5rem; font-weight: 800;
+      color: var(--text); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-mobile a:hover { color: var(--accent); }
+    .nav-mobile-close {
+      position: absolute; top: 24px; right: 24px;
+      font-size: 1.5rem; color: var(--muted); cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="mobileNav">
+  <span class="nav-mobile-close" id="closeNav">✕</span>
+  <a href="#home" onclick="closeMobileNav()">Home</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#case-studies" onclick="closeMobileNav()">Work</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#blog" onclick="closeMobileNav()">Blog</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">Alex<span>.</span>Reeve</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#case-studies">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="openMobileNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      Available for freelance projects — 2026
+    </div>
+    <h1 class="hero-title">
+      Design that<br>
+      <em>converts.</em><br>
+      <span class="stroke">Growth that</span><br>
+      scales.
+    </h1>
+    <p class="hero-desc">
+      I'm a UI/UX designer & performance marketer who builds products people love and campaigns that deliver measurable ROI. From zero to 1M+ downloads — I've done it.
+    </p>
+    <div class="hero-actions">
+      <a href="#case-studies" class="btn-primary">
+        View My Work
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn-secondary">
+        Start a Project
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">1M<span>+</span></div>
+        <div class="stat-label">App Downloads</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4.7<span>×</span></div>
+        <div class="stat-label">Avg. ROAS</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">$2M<span>+</span></div>
+        <div class="stat-label">Ad Spend Managed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    Scroll
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="dot"></span>UI/UX Design</span>
+    <span class="marquee-item"><span class="dot"></span>Performance Marketing</span>
+    <span class="marquee-item"><span class="dot"></span>Google Ads</span>
+    <span class="marquee-item"><span class="dot"></span>Meta Ads</span>
+    <span class="marquee-item"><span class="dot"></span>Brand Strategy</span>
+    <span class="marquee-item"><span class="dot"></span>Mobile App Design</span>
+    <span class="marquee-item"><span class="dot"></span>Conversion Optimization</span>
+    <span class="marquee-item"><span class="dot"></span>Growth Marketing</span>
+    <span class="marquee-item"><span class="dot"></span>Product Design</span>
+    <span class="marquee-item"><span class="dot"></span>SEO Strategy</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="marquee-item"><span class="dot"></span>UI/UX Design</span>
+    <span class="marquee-item"><span class="dot"></span>Performance Marketing</span>
+    <span class="marquee-item"><span class="dot"></span>Google Ads</span>
+    <span class="marquee-item"><span class="dot"></span>Meta Ads</span>
+    <span class="marquee-item"><span class="dot"></span>Brand Strategy</span>
+    <span class="marquee-item"><span class="dot"></span>Mobile App Design</span>
+    <span class="marquee-item"><span class="dot"></span>Conversion Optimization</span>
+    <span class="marquee-item"><span class="dot"></span>Growth Marketing</span>
+    <span class="marquee-item"><span class="dot"></span>Product Design</span>
+    <span class="marquee-item"><span class="dot"></span>SEO Strategy</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <div class="about-img-frame">
+          <div class="about-img-pattern"></div>
+          <div class="about-img-dots"></div>
+          <img src="images/image_joyonto.jpeg" alt="Joyonto Rozario" class="about-img-photo" />
+          <div class="about-img-text">JR</div>
+          <div style="position:absolute;bottom:32px;left:32px;right:32px;z-index:1;">
+            <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin-bottom:8px;">Joyonto Rozario</div>
+            <div style="font-size:0.82rem;color:var(--muted);">Designer × Marketer × Builder</div>
+          </div>
+        </div>
+        <div class="about-badge">Open to Work ✓</div>
+      </div>
+      <div class="about-content">
+        <span class="section-label reveal">About Me</span>
+        <h2 class="reveal">I build digital products that <em style="font-style:normal;color:var(--accent)">grow</em></h2>
+        <p class="reveal reveal-delay-1">
+          I sit at the intersection of design and data — creating experiences that are beautiful enough to earn trust and strategic enough to drive growth. My background spans product design, brand building, and performance advertising.
+        </p>
+        <p class="reveal reveal-delay-2">
+          I co-built a streetwear brand from zero to 6 figures, designed a mobile fitness app that hit 1M+ downloads, and have managed over $2M in paid media budget across Google and Meta platforms — all with a consistent focus on measurable outcomes.
+        </p>
+        <div class="about-tags reveal reveal-delay-3">
+          <span class="tag">Figma</span>
+          <span class="tag">React</span>
+          <span class="tag">Google Ads</span>
+          <span class="tag">Meta Ads</span>
+          <span class="tag">Framer</span>
+          <span class="tag">Analytics</span>
+          <span class="tag">A/B Testing</span>
+          <span class="tag">Shopify</span>
+          <span class="tag">Motion Design</span>
+          <span class="tag">Webflow</span>
+        </div>
+        <div class="about-numbers reveal">
+          <div class="about-num-item">
+            <div class="num">13+</div>
+            <div class="desc">Projects Completed</div>
+          </div>
+          <div class="about-num-item">
+            <div class="num">07</div>
+            <div class="desc">Happy Clients</div>
+          </div>
+          <div class="about-num-item">
+            <div class="num">3yr</div>
+            <div class="desc">Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="case-studies">
+  <div class="container">
+    <div class="cases-header reveal">
+      <div>
+        <span class="section-label">Case Studies</span>
+        <h2>Work that<br>moved the needle</h2>
+      </div>
+      <a href="#contact" class="btn-secondary">Start a project →</a>
+    </div>
+    <div class="case-grid">
+
+      <!-- CASE 1: Mobile App -->
+      <div class="case-card case-v1 reveal">
+        <div class="case-inner">
+          <div class="case-visual">
+            <div class="case-visual-num">01</div>
+            <div class="case-icon">📱</div>
+          </div>
+          <div class="case-body">
+            <div>
+              <div class="case-meta">
+                <span class="case-tag green">Mobile App</span>
+                <span class="case-tag green">UI/UX Design</span>
+                <span class="case-tag green">Growth</span>
+              </div>
+              <h3>Scaling a Fitness App from 0 to 1 Million Downloads</h3>
+              <p>FitFlow came to me with a functional app and a flat growth curve. I redesigned the onboarding experience, rebuilt the core workout tracking UI, and launched a targeted UA campaign — transforming it into a top-charting fitness app within 8 months.</p>
+              <div class="case-results">
+                <div class="result-item">
+                  <div class="result-num accent">1M+</div>
+                  <div class="result-label">Downloads</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num accent">4.7★</div>
+                  <div class="result-label">App Store Rating</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num accent">62%</div>
+                  <div class="result-label">Retention D30</div>
+                </div>
+              </div>
+            </div>
+            <a href="#contact" class="case-link">Read Case Study <span class="case-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 2: Streetwear Brand -->
+      <div class="case-card case-v2 reveal">
+        <div class="case-inner">
+          <div class="case-visual">
+            <div class="case-visual-num">02</div>
+            <div class="case-icon">👕</div>
+          </div>
+          <div class="case-body">
+            <div>
+              <div class="case-meta">
+                <span class="case-tag orange">Brand Building</span>
+                <span class="case-tag orange">E-commerce</span>
+                <span class="case-tag orange">Meta Ads</span>
+              </div>
+              <h3>Building a Streetwear Brand from Zero to 6 Figures</h3>
+              <p>VLTG was built from a Notion doc and a single product idea. I designed the entire brand identity, built the Shopify store, and ran performance campaigns that turned cultural resonance into consistent revenue — from launch to $140k ARR in year one.</p>
+              <div class="case-results">
+                <div class="result-item">
+                  <div class="result-num orange">$140k</div>
+                  <div class="result-label">Year 1 Revenue</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num orange">5.2×</div>
+                  <div class="result-label">Meta ROAS</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num orange">38%</div>
+                  <div class="result-label">Repeat Buyers</div>
+                </div>
+              </div>
+            </div>
+            <a href="#contact" class="case-link" style="color:var(--accent2)">Read Case Study <span class="case-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 3: Google Ads Campaign -->
+      <div class="case-card case-v3 reveal">
+        <div class="case-inner">
+          <div class="case-visual">
+            <div class="case-visual-num">03</div>
+            <div class="case-icon">📈</div>
+          </div>
+          <div class="case-body">
+            <div>
+              <div class="case-meta">
+                <span class="case-tag blue">Google Ads</span>
+                <span class="case-tag blue">Performance</span>
+                <span class="case-tag blue">SaaS</span>
+              </div>
+              <h3>Cutting CPA by 44% for a B2B SaaS Brand with Google Ads</h3>
+              <p>A SaaS startup was burning budget on broad match keywords with no clear conversion path. I restructured their entire campaign architecture, redesigned landing pages, and implemented a full-funnel approach that drove a dramatic CPA reduction in 90 days.</p>
+              <div class="case-results">
+                <div class="result-item">
+                  <div class="result-num blue">−44%</div>
+                  <div class="result-label">Cost Per Acquisition</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num blue">+210%</div>
+                  <div class="result-label">Conversion Rate</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-num blue">4.8×</div>
+                  <div class="result-label">ROAS</div>
+                </div>
+              </div>
+            </div>
+            <a href="#contact" class="case-link" style="color:var(--accent3)">Read Case Study <span class="case-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <span class="section-label reveal">What I Do</span>
+    <h2 class="reveal" style="font-size:clamp(2rem,4vw,3.2rem);max-width:560px;">
+      End-to-end digital growth — design to distribution
+    </h2>
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <span class="service-num">01</span>
+        <span class="service-icon">🎨</span>
+        <h3>UI/UX Design</h3>
+        <p>Research-backed design that prioritises user goals and business outcomes. From wireframes to pixel-perfect delivery.</p>
+        <ul class="service-list">
+          <li>User Research & Personas</li>
+          <li>Wireframing & Prototyping</li>
+          <li>Design Systems</li>
+          <li>Mobile & Web App Design</li>
+          <li>Usability Testing</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-num">02</span>
+        <span class="service-icon">🎯</span>
+        <h3>Performance Marketing</h3>
+        <p>Data-driven paid campaigns engineered to maximise ROAS across Google and Meta platforms.</p>
+        <ul class="service-list">
+          <li>Google Search & PMax</li>
+          <li>Meta & Instagram Ads</li>
+          <li>Audience Strategy</li>
+          <li>Creative Testing</li>
+          <li>Full-Funnel Attribution</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-num">03</span>
+        <span class="service-icon">🏷️</span>
+        <h3>Brand Strategy & Identity</h3>
+        <p>Brand foundations built for longevity — from naming and visual identity to positioning strategy.</p>
+        <ul class="service-list">
+          <li>Brand Architecture</li>
+          <li>Logo & Visual Identity</li>
+          <li>Voice & Tone Guidelines</li>
+          <li>Competitive Positioning</li>
+          <li>Launch Strategy</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-num">04</span>
+        <span class="service-icon">📊</span>
+        <h3>Conversion Rate Optimisation</h3>
+        <p>Systematic testing and redesign of landing pages, onboarding flows, and checkout experiences.</p>
+        <ul class="service-list">
+          <li>Heuristic Audit</li>
+          <li>A/B & Multivariate Testing</li>
+          <li>Landing Page Redesign</li>
+          <li>Funnel Analytics</li>
+          <li>Heatmap Analysis</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-num">05</span>
+        <span class="service-icon">📱</span>
+        <h3>App Design & Growth</h3>
+        <p>Mobile-first product design combined with ASO and UA strategies to drive downloads and retention.</p>
+        <ul class="service-list">
+          <li>iOS & Android Design</li>
+          <li>Onboarding Optimisation</li>
+          <li>App Store Optimisation</li>
+          <li>User Acquisition Campaigns</li>
+          <li>Retention Engineering</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-num">06</span>
+        <span class="service-icon">🛍️</span>
+        <h3>E-commerce Design</h3>
+        <p>Shopify stores built for conversion — combining strong brand aesthetics with relentless focus on revenue.</p>
+        <ul class="service-list">
+          <li>Shopify Custom Themes</li>
+          <li>Product Page Optimisation</li>
+          <li>Checkout UX</li>
+          <li>Email Flow Design</li>
+          <li>Growth Strategy</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <div class="blog-header reveal">
+      <div>
+        <span class="section-label">Insights</span>
+        <h2>Writing on design,<br>growth & craft</h2>
+      </div>
+      <a href="#contact" class="btn-secondary">View All Articles →</a>
+    </div>
+    <div class="blog-grid reveal">
+
+      <a href="#contact" class="blog-card featured">
+        <div>
+          <div class="blog-visual">
+            <div class="blog-visual-inner">📱</div>
+          </div>
+          <div class="blog-cat">Mobile App Growth</div>
+          <h3>How We Took a Fitness App from 0 to 1M Downloads in 8 Months: A Full Breakdown</h3>
+          <p>The complete playbook — from redesigning the onboarding flow to building a Meta UA strategy that scaled without killing ROAS. Including the three experiments that changed everything.</p>
+        </div>
+        <div class="blog-meta">
+          <span class="blog-date">April 12, 2026</span>
+          <span class="blog-read">12 min read →</span>
+        </div>
+      </a>
+
+      <a href="#contact" class="blog-card">
+        <div>
+          <div class="blog-cat">Performance Marketing</div>
+          <h3>The Google Ads Structure That Cut Our CPA by 44%</h3>
+          <p>Most SaaS companies are throwing money into broad match. Here's the campaign architecture that actually converts.</p>
+        </div>
+        <div class="blog-meta">
+          <span class="blog-date">Mar 28, 2026</span>
+          <span class="blog-read">8 min →</span>
+        </div>
+      </a>
+
+      <a href="#contact" class="blog-card">
+        <div>
+          <div class="blog-cat">UI/UX Design</div>
+          <h3>5 Onboarding Patterns That Boost D7 Retention</h3>
+          <p>The difference between apps that stick and apps that get deleted in 48 hours often comes down to the first 3 screens.</p>
+        </div>
+        <div class="blog-meta">
+          <span class="blog-date">Mar 10, 2026</span>
+          <span class="blog-read">6 min →</span>
+        </div>
+      </a>
+
+      <a href="#contact" class="blog-card">
+        <div>
+          <div class="blog-cat">Brand Strategy</div>
+          <h3>Building a Streetwear Brand in 2026: What Actually Works</h3>
+          <p>From community-first positioning to Meta creative that converts — the real lessons from building VLTG from scratch.</p>
+        </div>
+        <div class="blog-meta">
+          <span class="blog-date">Feb 19, 2026</span>
+          <span class="blog-read">10 min →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-bg"></div>
+  <div class="container">
+    <div class="contact-inner reveal">
+      <span class="section-label" style="justify-content:center;display:block;">Get In Touch</span>
+      <h2>Ready to build something <em>remarkable?</em></h2>
+      <p>
+        Whether you need a full product redesign, a performance marketing strategy, or you want to go from idea to launch — I'm ready to help. Let's create work that actually moves the needle.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:hello@alexreeve.co" class="contact-link primary">
+          ✉ hellojoyonto@design.com
+        </a>
+        <a href="#" class="contact-link">
+          ↗ LinkedIn
+        </a>
+        <a href="#" class="contact-link">
+          ↗ Facebook
+        </a>
+        <a href="#" class="contact-link">
+          ↗ Behance
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">JOYONTO<span>.</span>ROZARIO</div>
+  <div class="footer-copy">© 2026 Joyonto Rozario. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#case-studies">Work</a>
+    <a href="#services">Services</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+    ring.style.left = mx + 'px';
+    ring.style.top = my + 'px';
+  });
+  document.querySelectorAll('a, button, .tag').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); ring.classList.add('hover'); });
+    el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); ring.classList.remove('hover'); });
+  });
+
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Mobile nav
+  function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); }
+  function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+  document.getElementById('closeNav').addEventListener('click', closeMobileNav);
+
+  // Stat counter animation
+  function animateCounter(el, target, suffix = '') {
+    let start = 0;
+    const duration = 1800;
+    const step = timestamp => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        statsObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+</script>
+</body>
+</html>
