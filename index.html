@@ -8,7 +8,7 @@
   <title>Joyonto Rozario | Design School Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #050505;
@@ -21,8 +21,8 @@
       --border: rgba(255,255,255,0.08);
       --radius: 4px;
       --max: 1240px;
-      --font-sans: 'Inter', sans-serif;
-      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Poppins', sans-serif;
+      --font-serif: 'Cormorant Garamond', serif;
     }
 
     * { box-sizing: border-box; }
@@ -91,7 +91,9 @@
     .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: start; }
     .hero__intro { display: grid; gap: 32px; }
     .hero__eyebrow { font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-    .hero__headline { font-family: var(--font-serif); font-size: clamp(4rem, 6vw, 7rem); line-height: 0.92; letter-spacing: -0.06em; margin: 0; }
+    .hero__headline { font-family: var(--font-serif); font-size: clamp(4rem, 6vw, 7rem); line-height: 1; letter-spacing: -0.06em; margin: 0; display: grid; gap: 16px; }
+    .hero__headline-line { display: inline-block; }
+    .hero__headline-name { color: var(--accent); }
     .hero__meta { display: grid; gap: 18px; color: #d2cec5; font-size: 1rem; }
     .hero__meta strong { color: var(--text); font-weight: 700; }
     .hero__actions { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 24px; }
@@ -201,10 +203,13 @@
 
       <section class="section hero" id="home">
         <div class="hero__intro">
-          <span class="section-title">Design Faculty Portfolio</span>
-          <h1 class="hero__headline">A creative practice that bridges editorial systems, product design, and premium growth storytelling.</h1>
+          <span class="section-title">Hello Audiences,</span>
+          <h1 class="hero__headline">
+            <span class="hero__headline-line">Introduce to my Self</span>
+            <span class="hero__headline-line hero__headline-name">My name is Joyonto Rozario.</span>
+          </h1>
           <div class="hero__meta">
-            <p>Multidisciplinary designer, creative entrepreneur, and curator of compelling digital experiences. My work is built for audiences, attention, and cultural relevance.</p>
+            <p> My work is built for audiences, attention, and cultural relevance.</p>
             <p><strong>Featured work:</strong> App redesigns, brand systems, campaign ecosystems, and graduate-level design thinking portfolios.</p>
           </div>
           <div class="hero__actions">
