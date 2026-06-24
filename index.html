@@ -60,6 +60,11 @@
     }
     .topbar__brand { font-size: 0.95rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
     .topbar__brand span { color: var(--accent); }
+    .topbar__toggle { display: none; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); color: var(--text); width: 44px; height: 44px; border-radius: 16px; align-items: center; justify-content: center; cursor: pointer; }
+    .topbar__toggle span, .topbar__toggle span::before, .topbar__toggle span::after { display: block; width: 22px; height: 2px; background: currentColor; border-radius: 999px; position: relative; }
+    .topbar__toggle span::before, .topbar__toggle span::after { content: ''; position: absolute; left: 0; }
+    .topbar__toggle span::before { top: -7px; }
+    .topbar__toggle span::after { top: 7px; }
     .topbar__nav { display: flex; gap: 24px; flex-wrap: wrap; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted); }
     .topbar__nav a:hover { color: var(--text); }
     .section { padding: 96px 0; border-bottom: 1px solid var(--border); }
@@ -67,8 +72,8 @@
     .section-title { display: block; font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; font-weight: 700; }
     .section-heading { font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 5.4rem); line-height: 0.95; letter-spacing: -0.04em; max-width: 720px; margin: 0; }
     .section-copy { max-width: 720px; color: #cac6bf; font-size: 1rem; margin-top: 28px; line-height: 1.85; }
-    .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
-    .feature-copy { display: grid; gap: 24px; max-width: 580px; }
+    .featured-grid { display: grid; grid-template-columns: 30% 70%; gap: 44px; align-items: start; }
+    .feature-copy { display: grid; gap: 24px; max-width: 100%; }
     .feature-label { display: inline-flex; text-transform: uppercase; letter-spacing: 0.24em; font-size: 0.78rem; font-weight: 700; color: var(--accent); }
     .feature-heading { margin: 0; font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 4.8rem); line-height: 0.94; letter-spacing: -0.05em; max-width: 12ch; }
     .feature-text { max-width: 44rem; color: #d2cec5; font-size: 1rem; line-height: 1.9; }
@@ -78,12 +83,12 @@
     .project-card::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(255,107,53,0.18), transparent 28%); opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
     .project-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.16); box-shadow: 0 32px 100px rgba(0,0,0,0.35); }
     .project-card:hover::after { opacity: 1; }
-    .project-thumb { width: 100%; min-height: 240px; overflow: hidden; position: relative; }
+    .project-thumb { width: 100%; min-height: 320px; overflow: hidden; position: relative; }
     .project-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; display: block; }
     .project-card:hover .project-thumb img { transform: scale(1.12); }
-    .project-card__content { padding: 24px 24px 28px; display: grid; gap: 12px; }
-    .project-category { display: inline-flex; text-transform: uppercase; letter-spacing: 0.24em; font-size: 0.72rem; font-weight: 700; color: var(--accent); }
-    .project-title { margin: 0; font-size: 1.6rem; line-height: 1.12; letter-spacing: -0.02em; }
+    .project-card__content { padding: 32px 28px 34px; display: grid; gap: 14px; }
+    .project-category { display: inline-flex; text-transform: uppercase; letter-spacing: 0.24em; font-size: 0.74rem; font-weight: 700; color: var(--accent); padding: 10px 14px; border-radius: 999px; background: rgba(244,124,79,0.12); }
+    .project-title { margin: 0; font-size: 1.8rem; line-height: 1.12; letter-spacing: -0.02em; }
     .project-description { margin: 0; color: #c9c3bb; font-size: 0.96rem; line-height: 1.75; }
     .project-card__content h3 { margin: 0; }
     .project-card__content p { margin: 0; }
@@ -150,7 +155,7 @@
     .case-card h3 { margin: 0; font-size: 2rem; line-height: 1.05; }
     .case-card p { color: #ccc; margin: 0; }
     .case-meta { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 0.82rem; margin-top: 12px; }
-    .case-badge { padding: 10px 14px; background: rgba(244,124,79,0.12); color: var(--accent); border-radius: 999px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; }
+    .case-badge { display: inline-flex; align-items: center; justify-content: center; padding: 10px 18px; margin-bottom: 16px; background: rgba(244,124,79,0.12); color: var(--accent); border-radius: 999px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; line-height: 1; }
     .case-values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
     .case-value { border: 1px solid var(--border); border-radius: 20px; padding: 22px; }
     .case-value strong { display: block; font-size: 1.7rem; color: var(--text); }
@@ -177,11 +182,21 @@
       .featured-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 700px) {
-      .page-inner { padding: 36px 20px 80px; }
-      .topbar { padding: 18px 20px; }
+      .page-inner { padding: 32px 18px 72px; }
+      .topbar { padding: 16px 18px; position: relative; }
+      .topbar__toggle { display: inline-flex; }
+      .topbar__nav { display: none; flex-direction: column; gap: 16px; position: absolute; top: 100%; left: 18px; right: 18px; background: rgba(5,5,5,0.96); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 18px; margin: 12px 0 0; }
+      .topbar__nav.open { display: flex; }
+      .topbar__nav a { padding: 10px 0; }
+      .topbar__nav a:hover { color: var(--text); }
+      .hero { grid-template-columns: 1fr; gap: 32px; }
       .hero__headline { font-size: clamp(3rem, 10vw, 4.5rem); }
       .feature-heading { font-size: clamp(2.4rem, 10vw, 3.4rem); }
-      .project-thumb { min-height: 190px; }
+      .featured-grid { grid-template-columns: 1fr; gap: 32px; }
+      .featured-cards { grid-template-columns: 1fr; }
+      .project-thumb { min-height: 220px; }
+      .project-card__content { padding: 24px 20px 24px; }
+      .hero__actions { justify-content: center; }
       .section { padding: 72px 0; }
       .button { width: 100%; justify-content: center; }
     }
@@ -191,8 +206,9 @@
   <div class="page">
     <div class="page-inner">
       <header class="topbar">
-        <div class="topbar__brand">JOYONTO <span>ROZARIO</span></div>
-        <nav class="topbar__nav">
+          <div class="topbar__brand">JOYONTO <span>ROZARIO</span></div>
+        <button class="topbar__toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span></button>
+        <nav class="topbar__nav" aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#case-studies">Work</a>
           <a href="#services">Services</a>
@@ -228,7 +244,6 @@
         <span class="section-title">Featured work</span>
         <div class="featured-grid">
           <div class="feature-copy">
-            <span class="feature-label">FEATURED WORK</span>
             <h2 class="feature-heading">Designing products, brands & digital experiences.</h2>
             <p class="feature-text">I build premium visual systems that balance editorial refinement with product clarity. Every project is crafted to feel elevated, strategic, and designed for standout digital moments.</p>
             <div class="feature-actions">
@@ -290,12 +305,24 @@
             <div>
               <span class="case-badge">Brand system</span>
               <h3>VLTG — a streetwear launch that combined identity, motion, and commerce.</h3>
-              <p>Built from concept through first-year launch, the work includes visual identity, product packaging, Shopify storytelling, and campaign creative designed for cultural impact.</p>
+              <p>The project brought visual refinement, clearer information architecture, and a storytelling-first retention flow. Every screen was designed to feel editorial while supporting growth metrics.</p>
             </div>
             <div class="case-values">
               <div class="case-value"><strong>$140k</strong><span>First-year revenue</span></div>
               <div class="case-value"><strong>5.2×</strong><span>ROAS</span></div>
               <div class="case-value"><strong>38%</strong><span>Repeat buyers</span></div>
+            </div>
+          </article>
+          <article class="case-card">
+            <div>
+              <span class="case-badge">Campaign design</span>
+              <h3>Performance creative and landing design that cut CPA by 44% for a B2B SaaS brand.</h3>
+              <p>The brief demanded a more persuasive funnel. The final solution layered high-intent landing pages, creative narrative ads, and usability improvements.</p>
+            </div>
+            <div class="case-values">
+              <div class="case-value"><strong>−44%</strong><span>CPA</span></div>
+              <div class="case-value"><strong>+210%</strong><span>Conversion</span></div>
+              <div class="case-value"><strong>4.8×</strong><span>ROAS</span></div>
             </div>
           </article>
           <article class="case-card">
@@ -379,5 +406,21 @@
       </footer>
     </div>
   </div>
+  <script>
+    const toggle = document.querySelector('.topbar__toggle');
+    const nav = document.querySelector('.topbar__nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.addEventListener('click', (event) => {
+        if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
