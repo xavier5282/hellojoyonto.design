@@ -16,8 +16,8 @@
       --surface-soft: #191919;
       --text: #f7f5f0;
       --muted: #94918a;
-      --accent: #f47c4f;
-      --accent-soft: rgba(244,124,79,0.12);
+      --accent: #FF6B35;
+      --accent-soft: rgba(255,107,53,0.14);
       --border: rgba(255,255,255,0.08);
       --radius: 4px;
       --max: 1240px;
@@ -67,6 +67,27 @@
     .section-title { display: block; font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; font-weight: 700; }
     .section-heading { font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 5.4rem); line-height: 0.95; letter-spacing: -0.04em; max-width: 720px; margin: 0; }
     .section-copy { max-width: 720px; color: #cac6bf; font-size: 1rem; margin-top: 28px; line-height: 1.85; }
+    .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+    .feature-copy { display: grid; gap: 24px; max-width: 580px; }
+    .feature-label { display: inline-flex; text-transform: uppercase; letter-spacing: 0.24em; font-size: 0.78rem; font-weight: 700; color: var(--accent); }
+    .feature-heading { margin: 0; font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 4.8rem); line-height: 0.94; letter-spacing: -0.05em; max-width: 12ch; }
+    .feature-text { max-width: 44rem; color: #d2cec5; font-size: 1rem; line-height: 1.9; }
+    .feature-actions { margin-top: 10px; }
+    .featured-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .project-card { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; }
+    .project-card::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(255,107,53,0.18), transparent 28%); opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
+    .project-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.16); box-shadow: 0 32px 100px rgba(0,0,0,0.35); }
+    .project-card:hover::after { opacity: 1; }
+    .project-thumb { width: 100%; min-height: 240px; overflow: hidden; position: relative; }
+    .project-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; display: block; }
+    .project-card:hover .project-thumb img { transform: scale(1.12); }
+    .project-card__content { padding: 24px 24px 28px; display: grid; gap: 12px; }
+    .project-category { display: inline-flex; text-transform: uppercase; letter-spacing: 0.24em; font-size: 0.72rem; font-weight: 700; color: var(--accent); }
+    .project-title { margin: 0; font-size: 1.6rem; line-height: 1.12; letter-spacing: -0.02em; }
+    .project-description { margin: 0; color: #c9c3bb; font-size: 0.96rem; line-height: 1.75; }
+    .project-card__content h3 { margin: 0; }
+    .project-card__content p { margin: 0; }
+    .project-card img { display: block; }
     .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: start; }
     .hero__intro { display: grid; gap: 32px; }
     .hero__eyebrow { font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
@@ -151,11 +172,14 @@
       .hero { grid-template-columns: 1fr; }
       .about-grid, .wireframes, .case-grid, .process-grid, .boards-grid, .detail-grid, .poster-grid, .comparison-grid, .visual-grid { grid-template-columns: 1fr; }
       .hero__portrait { min-height: 520px; }
+      .featured-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 700px) {
       .page-inner { padding: 36px 20px 80px; }
       .topbar { padding: 18px 20px; }
       .hero__headline { font-size: clamp(3rem, 10vw, 4.5rem); }
+      .feature-heading { font-size: clamp(2.4rem, 10vw, 3.4rem); }
+      .project-thumb { min-height: 190px; }
       .section { padding: 72px 0; }
       .button { width: 100%; justify-content: center; }
     }
@@ -195,27 +219,48 @@
         </div>
       </section>
 
-      <section class="section" id="about">
-        <span class="section-title">About the practice</span>
-        <div class="about-grid">
-          <div class="about-panel">
-            <strong>Design with editorial clarity, built for ambitious digital brands.</strong>
-            <p>I craft design narratives that are grounded in research and refined through storytelling. My process combines visual system building, product thinking, and performance-led experimentation.</p>
-            <p>Whether the brief is a flagship product launch or a creative brand relaunch, the work is organised through a purposeful structure that feels both refined and strategic.</p>
+      <section class="section featured-work" id="about">
+        <span class="section-title">Featured work</span>
+        <div class="featured-grid">
+          <div class="feature-copy">
+            <span class="feature-label">FEATURED WORK</span>
+            <h2 class="feature-heading">Designing products, brands & digital experiences.</h2>
+            <p class="feature-text">I build premium visual systems that balance editorial refinement with product clarity. Every project is crafted to feel elevated, strategic, and designed for standout digital moments.</p>
+            <div class="feature-actions">
+              <a href="#case-studies" class="button button--primary">View All Projects</a>
+            </div>
           </div>
-          <div class="about-highlights">
-            <div class="marker-card">
-              <span>Studio focus</span>
-              <strong>Brand systems, product experiences, and campaign frameworks</strong>
-            </div>
-            <div class="marker-card">
-              <span>Creative posture</span>
-              <strong>Concept-first craft with performance-driven rigor</strong>
-            </div>
-            <div class="marker-card">
-              <span>Impact</span>
-              <strong>Design work that amplifies visibility, trust, and conversion</strong>
-            </div>
+          <div class="featured-cards">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="GameGuard VPN project preview" />
+              </div>
+              <div class="project-card__content">
+                <span class="project-category">UI/UX Design</span>
+                <h3 class="project-title">GameGuard VPN</h3>
+                <p class="project-description">Secure and user-focused VPN experience.</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=900&q=80" alt="Juptee branding project preview" />
+              </div>
+              <div class="project-card__content">
+                <span class="project-category">Branding</span>
+                <h3 class="project-title">Juptee</h3>
+                <p class="project-description">Fashion brand identity and e-commerce design.</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="Compro Health product design preview" />
+              </div>
+              <div class="project-card__content">
+                <span class="project-category">Product Design</span>
+                <h3 class="project-title">Compro Health</h3>
+                <p class="project-description">Healthcare platform focused on usability.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
