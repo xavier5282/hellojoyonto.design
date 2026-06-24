@@ -72,24 +72,78 @@
     .section-title { display: block; font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; font-weight: 700; }
     .section-heading { font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 5.4rem); line-height: 0.95; letter-spacing: -0.04em; max-width: 720px; margin: 0; }
     .section-copy { max-width: 720px; color: #cac6bf; font-size: 1rem; margin-top: 28px; line-height: 1.85; }
-    .featured-grid { display: grid; grid-template-columns: 30% 70%; gap: 44px; align-items: start; }
-    .feature-copy { display: grid; gap: 24px; max-width: 100%; }
+    .featured-grid { display: grid; grid-template-columns: 34% 66%; gap: 56px; align-items: start; position: relative; }
+    .feature-copy { display: grid; gap: 28px; max-width: 100%; }
     .feature-label { display: inline-flex; text-transform: uppercase; letter-spacing: 0.24em; font-size: 0.78rem; font-weight: 700; color: var(--accent); }
     .feature-heading { margin: 0; font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 4.8rem); line-height: 0.94; letter-spacing: -0.05em; max-width: 12ch; }
     .feature-text { max-width: 44rem; color: #d2cec5; font-size: 1rem; line-height: 1.9; }
     .feature-actions { margin-top: 10px; }
-    .featured-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-    .project-card { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; }
-    .project-card::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(255,107,53,0.18), transparent 28%); opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
-    .project-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.16); box-shadow: 0 32px 100px rgba(0,0,0,0.35); }
-    .project-card:hover::after { opacity: 1; }
-    .project-thumb { width: 100%; min-height: 320px; overflow: hidden; position: relative; }
-    .project-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; display: block; }
-    .project-card:hover .project-thumb img { transform: scale(1.12); }
-    .project-card__content { padding: 32px 28px 34px; display: grid; gap: 14px; }
-    .project-category { display: inline-flex; text-transform: uppercase; letter-spacing: 0.24em; font-size: 0.74rem; font-weight: 700; color: var(--accent); padding: 10px 14px; border-radius: 999px; background: rgba(244,124,79,0.12); }
-    .project-title { margin: 0; font-size: 1.8rem; line-height: 1.12; letter-spacing: -0.02em; }
-    .project-description { margin: 0; color: #c9c3bb; font-size: 0.96rem; line-height: 1.75; }
+    .featured-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+    .project-card { position: relative; overflow: visible; border-radius: 28px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.04); backdrop-filter: blur(12px); display: grid; grid-template-rows: 65% 35%; height: 620px; transition: transform 0.5s cubic-bezier(.2,.9,.3,1), box-shadow 0.5s, border-color 0.45s; z-index: 1; }
+    .project-card::before { content: ''; position: absolute; inset: -18px; border-radius: 36px; background: radial-gradient(circle at 20% 10%, rgba(255,107,53,0.06), transparent 8%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.02), transparent 20%); filter: blur(36px); opacity: 0; transition: opacity 0.45s ease; pointer-events: none; z-index: 0; }
+    .project-card:hover { transform: translateY(-14px); box-shadow: 0 40px 120px rgba(0,0,0,0.6), 0 12px 40px rgba(0,0,0,0.45); border-color: rgba(255,107,53,0.22); }
+    .project-card:hover::before { opacity: 1; }
+    .project-thumb { width: 100%; overflow: hidden; position: relative; border-top-left-radius: 28px; border-top-right-radius: 28px; }
+    .project-thumb::before { content: ''; position: absolute; inset: 0; pointer-events: none; }
+    .project-thumb::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 46%; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.56) 100%); pointer-events: none; }
+    .project-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.56s ease; display: block; }
+    .project-card:hover .project-thumb img { transform: scale(1.06); }
+    .project-card__content { padding: 32px; display: grid; gap: 12px; align-content: center; z-index: 2; }
+    .project-card .project-category { font-size: 0.72rem; letter-spacing: 0.16em; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.03); color: var(--accent); display: inline-flex; align-items: center; }
+    .project-card .project-title { font-size: 1.6rem; line-height: 1.08; margin: 0; color: #f5f3ef; }
+    .project-card .project-description { color: #d6d2cb; font-size: 0.98rem; line-height: 1.6; margin-top: 6px; }
+    .project-card__content .meta { opacity: 0; transform: translateY(10px); transition: opacity 0.45s ease, transform 0.45s ease; }
+    .project-card:hover .project-card__content .meta { opacity: 1; transform: translateY(0); }
+    .project-card> * { position: relative; }
+
+    /* Category visual treatments */
+    .project-card--vpn .project-thumb::before { background: radial-gradient(ellipse at 20% 10%, rgba(38,150,255,0.12), transparent 15%), linear-gradient(180deg, rgba(38,150,255,0.03), transparent 40%); }
+    .project-card--vpn::before { background: radial-gradient(circle at 10% 10%, rgba(38,150,255,0.06), transparent 8%), radial-gradient(circle at 80% 80%, rgba(255,107,53,0.02), transparent 20%); }
+    .project-card--fashion .project-thumb::before { background: radial-gradient(ellipse at 70% 20%, rgba(255,184,128,0.06), transparent 12%), linear-gradient(180deg, rgba(0,0,0,0.02), transparent 40%); }
+    .project-card--game .project-thumb::before { background: radial-gradient(ellipse at 80% 10%, rgba(255,120,180,0.06), transparent 10%), linear-gradient(180deg, rgba(0,0,0,0.02), transparent 40%); }
+
+    /* Noise / subtle background behind featured area */
+    .featured-work { position: relative; }
+    .featured-work::before { content: ''; position: absolute; inset: -120px -60px -60px -60px; background: radial-gradient(circle at 10% 10%, rgba(255,107,53,0.02), transparent 8%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.02), transparent 14%); pointer-events: none; z-index: 0; border-radius: 8px; }
+
+    /* Slider styles */
+    .featured-slider-wrap { width: 100%; }
+    .slider-header { display:flex; justify-content:flex-end; align-items:center; gap:18px; margin-bottom:14px; }
+    .slider-nav { display:flex; gap:12px; align-items:center; }
+    .slider-btn { width:44px; height:44px; border-radius:50%; background: rgba(255,255,255,0.04); color: var(--text); border: 1px solid rgba(255,255,255,0.04); display:grid; place-items:center; cursor:pointer; transition: transform 200ms, box-shadow 200ms, background 200ms; }
+    .slider-btn:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(255,107,53,0.12); background: rgba(255,255,255,0.06); }
+    .slider-counter { font-size: 0.95rem; color: #cfc9c1; letter-spacing: 0.08em; }
+
+    .slider-viewport { overflow: hidden; }
+    .slider-track { display: flex; gap: 28px; transition: transform 0.6s cubic-bezier(.2,.9,.25,1); will-change: transform; }
+    .slide { flex: 0 0 520px; width: 520px; height: 660px; border-radius: 28px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.04); overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.55); cursor: grab; transition: transform 0.5s ease, box-shadow 0.45s ease; }
+    .slide:active { cursor: grabbing; }
+    .slide.active { transform: scale(1.03); box-shadow: 0 40px 120px rgba(0,0,0,0.65), 0 12px 40px rgba(0,0,0,0.45); }
+
+    .slide .project-thumb { height: 70%; overflow: hidden; position: relative; }
+    .slide .project-thumb img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 500ms ease; }
+    .slide:hover .project-thumb img { transform: scale(1.05); }
+    .thumb-overlay { position:absolute; left:0; right:0; bottom:0; height:46%; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.56) 100%); pointer-events:none; }
+
+    .project-card__content { padding:20px 22px; height:30%; display:block; }
+    .project-card__content .row { display:flex; justify-content:space-between; align-items:center; }
+    .project-category { font-size:0.72rem; color:var(--accent); letter-spacing:0.14em; }
+    .project-year { font-size:0.9rem; color:#bfb8b0; }
+    .project-title { margin:8px 0 0; font-size:1.5rem; }
+    .project-description { margin:8px 0 0; color:#cfc9c1; font-size:0.95rem; }
+
+    .progress { height:6px; background: rgba(255,255,255,0.04); border-radius: 999px; overflow:hidden; margin-top:16px; }
+    .progress-fill { height:100%; background: linear-gradient(90deg, var(--accent), rgba(255,107,53,0.6)); width:33%; transition: width 0.6s ease; }
+
+    /* Responsive behavior */
+    @media (max-width: 1100px) {
+      .slide { flex: 0 0 calc((100% - 28px) / 1.5); width: calc((100% - 28px) / 1.5); height: 560px; }
+    }
+    @media (max-width: 700px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      .slide { flex: 0 0 100%; width: 100%; height: 520px; }
+      .slider-header { justify-content: center; }
+    }
     .project-card__content h3 { margin: 0; }
     .project-card__content p { margin: 0; }
     .project-card img { display: block; }
@@ -180,6 +234,8 @@
       .about-grid, .wireframes, .case-grid, .process-grid, .boards-grid, .detail-grid, .poster-grid, .comparison-grid, .visual-grid { grid-template-columns: 1fr; }
       .hero__portrait { min-height: 520px; }
       .featured-grid { grid-template-columns: 1fr; }
+      .featured-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+      .project-card { height: 520px; grid-template-rows: 62% 38%; }
     }
     @media (max-width: 700px) {
       .page-inner { padding: 32px 18px 72px; }
@@ -194,6 +250,7 @@
       .feature-heading { font-size: clamp(2.4rem, 10vw, 3.4rem); }
       .featured-grid { grid-template-columns: 1fr; gap: 32px; }
       .featured-cards { grid-template-columns: 1fr; }
+      .project-card { height: auto; grid-template-rows: auto 1fr; }
       .project-thumb { min-height: 220px; }
       .project-card__content { padding: 24px 20px 24px; }
       .hero__actions { justify-content: center; }
@@ -250,37 +307,102 @@
               <a href="#case-studies" class="button button--primary">View All Projects</a>
             </div>
           </div>
-          <div class="featured-cards">
-            <article class="project-card">
-              <div class="project-thumb">
-                <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=900&q=80" alt="Juptee branding project preview" />
+
+          <!-- Slider (right column) -->
+          <div class="featured-slider-wrap">
+            <div class="slider-header">
+              <div class="slider-nav">
+                <button class="slider-btn prev" aria-label="Previous project">‹</button>
+                <button class="slider-btn next" aria-label="Next project">›</button>
               </div>
-              <div class="project-card__content">
-                <span class="project-category">UI/UX</span>
-                <h3 class="project-title">Secure Super VPN</h3>
-                <p class="project-description">Secure and user-focused VPN experience.</p>
+              <div class="slider-meta">
+                <div class="slider-counter"><span class="current">01</span> / <span class="total">05</span></div>
               </div>
-            </article>
-            <article class="project-card">
-              <div class="project-thumb">
-                <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=900&q=80" alt="Juptee branding project preview" />
+            </div>
+
+            <div class="slider-viewport" aria-roledescription="carousel">
+              <div class="slider-track">
+                <article class="slide project-card project-card--vpn" data-index="0">
+                  <div class="project-thumb">
+                    <img src="Mobile App Design.jpg" alt="Secure Super VPN project preview" />
+                    <div class="thumb-overlay"></div>
+                  </div>
+                  <div class="project-card__content">
+                    <div class="row">
+                      <span class="project-category">UI/UX</span>
+                      <span class="project-year">2025</span>
+                    </div>
+                    <h3 class="project-title">Secure Super VPN</h3>
+                    <p class="project-description">Secure and user-focused VPN experience.</p>
+                  </div>
+                </article>
+
+                <article class="slide project-card project-card--fashion" data-index="1">
+                  <div class="project-thumb">
+                    <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=1400&q=80" alt="Juptee branding project preview" />
+                    <div class="thumb-overlay"></div>
+                  </div>
+                  <div class="project-card__content">
+                    <div class="row">
+                      <span class="project-category">Branding</span>
+                      <span class="project-year">2024</span>
+                    </div>
+                    <h3 class="project-title">Juptee</h3>
+                    <p class="project-description">Fashion brand identity and e-commerce design.</p>
+                  </div>
+                </article>
+
+                <article class="slide project-card project-card--game" data-index="2">
+                  <div class="project-thumb">
+                    <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1400&q=80" alt="Pinominos game UI project preview" />
+                    <div class="thumb-overlay"></div>
+                  </div>
+                  <div class="project-card__content">
+                    <div class="row">
+                      <span class="project-category">Game UI</span>
+                      <span class="project-year">2023</span>
+                    </div>
+                    <h3 class="project-title">Pinominos Game UI</h3>
+                    <p class="project-description">Engaging game interface design for a popular puzzle game.</p>
+                  </div>
+                </article>
+                <article class="slide project-card project-card--studio" data-index="3">
+                  <div class="project-thumb">
+                    <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=1400&q=80" alt="Editorial studio project preview" />
+                    <div class="thumb-overlay"></div>
+                  </div>
+                  <div class="project-card__content">
+                    <div class="row">
+                      <span class="project-category">Campaign</span>
+                      <span class="project-year">2022</span>
+                    </div>
+                    <h3 class="project-title">Editorial Studio</h3>
+                    <p class="project-description">Campaign and visual storytelling.</p>
+                  </div>
+                </article>
+
+                <article class="slide project-card project-card--product" data-index="4">
+                  <div class="project-thumb">
+                    <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1400&q=80" alt="Commerce product project preview" />
+                    <div class="thumb-overlay"></div>
+                  </div>
+                  <div class="project-card__content">
+                    <div class="row">
+                      <span class="project-category">Product</span>
+                      <span class="project-year">2021</span>
+                    </div>
+                    <h3 class="project-title">Commerce Product</h3>
+                    <p class="project-description">E-commerce product and interaction design.</p>
+                  </div>
+                </article>
               </div>
-              <div class="project-card__content">
-                <span class="project-category">Branding</span>
-                <h3 class="project-title">Juptee</h3>
-                <p class="project-description">Fashion brand identity and e-commerce design.</p>
+            </div>
+
+            <div class="slider-footer">
+              <div class="progress">
+                <div class="progress-fill" style="width:33%"></div>
               </div>
-            </article>
-            <article class="project-card">
-              <div class="project-thumb">
-                <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=900&q=80" alt="Juptee branding project preview" />
-              </div>
-              <div class="project-card__content">
-                <span class="project-category">Game UI </span>
-                <h3 class="project-title">Pinominos Game UI</h3>
-                <p class="project-description">Engaging game interface design for a popular puzzle game.</p>
-              </div>
-            </article>
+            </div>
           </div>
         </div>
       </section>
@@ -421,6 +543,82 @@
         }
       });
     }
+  </script>
+  <script>
+    (function(){
+      const track = document.querySelector('.slider-track');
+      if(!track) return;
+      const slides = Array.from(track.children);
+      const prevBtn = document.querySelector('.slider-btn.prev');
+      const nextBtn = document.querySelector('.slider-btn.next');
+      const viewport = document.querySelector('.slider-viewport');
+      const counterCurrent = document.querySelector('.slider-counter .current');
+      const counterTotal = document.querySelector('.slider-counter .total');
+      const progressFill = document.querySelector('.progress-fill');
+      let index = 0;
+      let autoplayId = null;
+
+      function getVisibleCount(){
+        const w = window.innerWidth;
+        if(w < 700) return 1;
+        if(w < 1100) return 1.5;
+        return 2;
+      }
+
+      function computeSizes(){
+        const rect = slides[0].getBoundingClientRect();
+        const gapStr = getComputedStyle(track).gap || '28px';
+        const gap = parseInt(gapStr, 10) || 28;
+        const slideW = rect.width;
+        const visible = getVisibleCount();
+        // use ceil for visible to ensure slides align fully into view
+        const visibleCount = Math.ceil(visible);
+        const maxIndex = Math.max(0, slides.length - visibleCount);
+        return {slideW, gap, visible: visibleCount, maxIndex};
+      }
+
+      function updateUI(animate=true){
+        const {slideW, gap, maxIndex} = computeSizes();
+        const step = slideW + gap;
+        if(index > maxIndex) index = maxIndex;
+        if(index < 0) index = 0;
+        if(!animate) track.style.transition = 'none'; else track.style.transition = '';
+        track.style.transform = `translateX(-${index * step}px)`;
+        slides.forEach((s,i)=> s.classList.toggle('active', i===index));
+        if(counterCurrent) counterCurrent.textContent = String(index+1).padStart(2,'0');
+        if(counterTotal) counterTotal.textContent = String(slides.length).padStart(2,'0');
+        if(progressFill) {
+          const denom = Math.max(1, maxIndex);
+          progressFill.style.width = `${(index/denom)*100}%`;
+        }
+      }
+
+      function next(){ index = (index + 1) % slides.length; updateUI(); }
+      function prev(){ index = (index - 1 + slides.length) % slides.length; updateUI(); }
+
+      if(nextBtn) nextBtn.addEventListener('click', ()=>{ next(); resetAutoplay(); });
+      if(prevBtn) prevBtn.addEventListener('click', ()=>{ prev(); resetAutoplay(); });
+
+      // autoplay
+      function startAutoplay(){ if(autoplayId) return; autoplayId = setInterval(()=>{ next(); }, 6000); }
+      function pauseAutoplay(){ if(autoplayId){ clearInterval(autoplayId); autoplayId = null; } }
+      function resetAutoplay(){ pauseAutoplay(); startAutoplay(); }
+
+      viewport.addEventListener('mouseenter', ()=> pauseAutoplay());
+      viewport.addEventListener('mouseleave', ()=> startAutoplay());
+
+      // pointer drag
+      let down = false, startX = 0;
+      track.addEventListener('pointerdown', (e)=>{ down = true; startX = e.clientX; track.setPointerCapture(e.pointerId); track.style.transition = 'none'; });
+      track.addEventListener('pointermove', (e)=>{ if(!down) return; const dx = e.clientX - startX; const {slideW,gap} = computeSizes(); const translate = -index*(slideW+gap) + dx; track.style.transform = `translateX(${translate}px)`; });
+      track.addEventListener('pointerup', (e)=>{ if(!down) return; down = false; track.releasePointerCapture(e.pointerId); track.style.transition = ''; const dx = e.clientX - startX; if(Math.abs(dx) > 80){ if(dx > 0) prev(); else next(); } else { updateUI(); } resetAutoplay(); });
+
+      window.addEventListener('resize', ()=> updateUI(false));
+
+      // init
+      updateUI(false);
+      startAutoplay();
+    })();
   </script>
 </body>
 </html>
