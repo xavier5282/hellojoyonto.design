@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600" role="img" aria-label="GameGuard VPN preview illustration">
+  <rect width="900" height="600" fill="#0B0B0B"/>
+  <rect x="60" y="70" width="780" height="460" rx="34" fill="#111111" stroke="#2A2A2A"/>
+  <rect x="110" y="120" width="240" height="260" rx="24" fill="#1A1A1A"/>
+  <rect x="390" y="120" width="370" height="32" rx="16" fill="#FF6B35" opacity="0.9"/>
+  <rect x="390" y="176" width="320" height="18" rx="9" fill="#5B5B5B"/>
+  <rect x="390" y="214" width="286" height="18" rx="9" fill="#5B5B5B"/>
+  <rect x="390" y="252" width="302" height="18" rx="9" fill="#5B5B5B"/>
+  <rect x="110" y="420" width="220" height="44" rx="22" fill="#FF6B35"/>
+  <circle cx="690" cy="410" r="92" fill="none" stroke="#FF6B35" stroke-width="24"/>
+</svg>

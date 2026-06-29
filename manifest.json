@@ -1,0 +1,21 @@
+{
+  "name": "Joyonto Rozario Portfolio",
+  "short_name": "Joyonto",
+  "description": "Premium portfolio website for Joyonto Rozario.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "image_joyonto.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "image_joyonto.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
