@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050505;
+  --accent: #FF6B35;
+}
+
+html,body,#root { height: 100%; }
+body { background: var(--bg); }
+
+/* Small helper for the slider */
+.slider-shadow { box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
