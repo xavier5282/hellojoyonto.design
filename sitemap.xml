@@ -1,46 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://hellojoyonto.design/</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<url>
+<loc>https://hellojoyonto.design/</loc>
+</url>
 
-  <url>
-    <loc>https://hellojoyonto.design/about</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+<url>
+<loc>https://hellojoyonto.design/about.html</loc>
+</url>
 
-  <url>
-    <loc>https://hellojoyonto.design/resume</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url>
+<loc>https://hellojoyonto.design/portfolio.html</loc>
+</url>
 
-  <url>
-    <loc>https://hellojoyonto.design/portfolio</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+<url>
+<loc>https://hellojoyonto.design/services.html</loc>
+</url>
 
-  <url>
-    <loc>https://hellojoyonto.design/blog</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url>
+<loc>https://hellojoyonto.design/resume.html</loc>
+</url>
 
-  <url>
-    <loc>https://hellojoyonto.design/contact</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+<url>
+<loc>https://hellojoyonto.design/blog.html</loc>
+</url>
+
+<url>
+<loc>https://hellojoyonto.design/contact.html</loc>
+</url>
+
+<url>
+<loc>https://hellojoyonto.design/projects/gameguard-vpn.html</loc>
+</url>
+
+<url>
+<loc>https://hellojoyonto.design/projects/compro-health.html</loc>
+</url>
+
+<url>
+<loc>https://hellojoyonto.design/projects/juptee.html</loc>
+</url>
+
+<url>
+<loc>https://hellojoyonto.design/projects/beautylab-ai.html</loc>
+</url>
 
 </urlset>

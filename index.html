@@ -40,6 +40,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="Joyonto Portfolio" />
@@ -200,49 +201,55 @@
             </div>
           </section>
 
-          <section class="section featured-work" id="about" aria-labelledby="featured-heading">
-            <p class="section-title">Featured work</p>
-            <div class="featured-grid">
-              <div class="feature-copy">
-                <h2 class="feature-heading" id="featured-heading">Designing products, brands & digital experiences.</h2>
-                <p class="feature-text">I build premium visual systems that balance editorial refinement with product clarity. Every project is crafted to feel elevated, strategic, and designed for standout digital moments.</p>
-                <div class="feature-actions">
-                  <a href="#case-studies" class="button button--primary">View All Projects</a>
-                </div>
+          <section class="section featured-work" id="about" aria-labelledby="about-heading">
+              <p class="section-title">About Me</p>
+              <div class="featured-grid">
+                  <div class="feature-copy">
+                      <h2 class="feature-heading" id="about-heading">
+                          Designing experiences that are
+                          <span>beautiful, functional & meaningful.</span>
+                      </h2>
+                      <div class="feature-buttons">
+                        <a href="about.html" class="button button--primary">About Me</a>
+                        <a href="portfolio.html" class="button button--secondary">My Portfolio</a>
+                      </div>
+                    </div>
+                  <div class="featured-cards">
+                      <article class="project-card">
+                          <div class="project-card__content">
+                              <span class="project-category">Specialization</span>
+                              <h3 class="project-title">
+                                  UI/UX & Product Design
+                              </h3>
+                              <p class="project-description">
+                                  Creating intuitive mobile apps, SaaS platforms, dashboards, and user-centered digital products.
+                              </p>
+                          </div>
+                      </article>
+                      <article class="project-card">
+                          <div class="project-card__content">
+                              <span class="project-category">Brand Identity</span>
+                              <h3 class="project-title">
+                                  Visual Branding
+                              </h3>
+                              <p class="project-description">
+                                  Logos, typography, color systems, and complete visual identities that make brands memorable.
+                              </p>
+                          </div>
+                      </article>
+                      <article class="project-card">
+                          <div class="project-card__content">
+                              <span class="project-category">Creative Direction</span>
+                              <h3 class="project-title">
+                                  End-to-End Design
+                              </h3>
+                              <p class="project-description">
+                                  From concept and research to polished interfaces, prototypes, and development-ready assets.
+                              </p>
+                          </div>
+                      </article>
+                  </div>
               </div>
-              <div class="featured-cards">
-                <article class="project-card">
-                  <div class="project-thumb">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="GameGuard VPN project preview" width="900" height="600" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="project-card__content">
-                    <span class="project-category">UI/UX Design</span>
-                    <h3 class="project-title">GameGuard VPN</h3>
-                    <p class="project-description">Secure and user-focused VPN experience.</p>
-                  </div>
-                </article>
-                <article class="project-card">
-                  <div class="project-thumb">
-                    <img src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=900&q=80" alt="Juptee branding project preview" width="900" height="600" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="project-card__content">
-                    <span class="project-category">Branding</span>
-                    <h3 class="project-title">Juptee</h3>
-                    <p class="project-description">Fashion brand identity and e-commerce design.</p>
-                  </div>
-                </article>
-                <article class="project-card">
-                  <div class="project-thumb">
-                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="Compro Health product design preview" width="900" height="600" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="project-card__content">
-                    <span class="project-category">Product Design</span>
-                    <h3 class="project-title">Compro Health</h3>
-                    <p class="project-description">Healthcare platform focused on usability.</p>
-                  </div>
-                </article>
-              </div>
-            </div>
           </section>
 
           <section class="section" id="case-studies" aria-labelledby="case-studies-heading">
@@ -362,12 +369,63 @@
         </main>
 
         <footer class="footer">
-          <div>Joyonto Rozario © 2026</div>
-          <div class="footer__meta">Designed for thoughtful brands. Crafted for high-touch storytelling.</div>
+          <div class="footer__top">
+            <div>Joyonto Rozario © 2026</div>
+            <div class="footer-social" aria-label="Social media links">
+
+                <a href="https://www.behance.net/joyontorozario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Behance">
+                  <i class="fa-brands fa-behance"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/joyontorozario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="https://www.instagram.com/yourusername"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://github.com/xavier5282"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://facebook.com/xavier5282"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__meta">UI/UX Designer • Product Designer • Brand Identity Designer</div>
+            <div class="footer-links">
+              <a href="/about.html" target="_blank">About</a>
+              <a href="/portfolio.html" target="_blank">Portfolio</a>
+              <a href="/services.html" target="_blank">Services</a>
+              <a href="/resume.html" target="_blank">Resume</a>
+              <a href="/blog.html" target="_blank">Blog</a>
+              <a href="/contact.html" target="_blank">Contact</a>
+            </div>
+          </div>
         </footer>
       </div>
     </div>
     <script src="assets/js/main.js" defer></script>
+    <div class="custom-cursor">
+    <img src="assets/images/cursor-face.png" alt="Custom cursor"></div>
   </body>
 </html>
 
