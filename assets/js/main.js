@@ -146,3 +146,7 @@ form.addEventListener("submit", function (e) {
         btn.disabled = false;
     });
 });
+btn.disabled = true;
+btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+btn.disabled = false;
+btn.innerHTML = "Send Message";
