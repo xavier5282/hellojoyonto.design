@@ -109,4 +109,40 @@ if (cursor) {
 
     });
 
-}
+}// Initialize EmailJS
+emailjs.init("OYjRQdCtjB1hsrT-Z");
+
+const form = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+const btn = document.getElementById("sendBtn");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    btn.innerHTML = "Sending...";
+    btn.disabled = true;
+
+    emailjs.sendForm(
+        "service_hxcx4vz",
+        "template_e62wxak",
+        this
+    )
+    .then(() => {
+        status.innerHTML = "✅ Thank you! Your message has been sent successfully.";
+        status.style.color = "#D4AF37";
+
+        form.reset();
+
+        btn.innerHTML = "Send Message";
+        btn.disabled = false;
+    })
+    .catch((error) => {
+        console.error("EmailJS Error:", error);
+
+        status.innerHTML = "❌ Failed to send your message. Please try again.";
+        status.style.color = "#ff6b6b";
+
+        btn.innerHTML = "Send Message";
+        btn.disabled = false;
+    });
+});

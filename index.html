@@ -351,21 +351,64 @@
             </div>
           </section>
 
-          <section class="section" id="contact" aria-labelledby="contact-heading">
-            <p class="section-title">Contact</p>
-            <h2 class="section-heading" id="contact-heading">Interested in a collaboration or studio conversation?</h2>
-            <p class="section-copy">Let’s connect if you are looking for creative direction, product strategy, or premium digital design that reads like a portfolio essay.</p>
-            <div class="about-grid section-offset--large">
-              <div class="about-panel">
-                <strong>Email</strong>
-                <p>hello@joyontorozario.design</p>
-              </div>
-              <div class="about-panel">
-                <strong>Availability</strong>
-                <p>Open for studio engagements, advisory work, and portfolio collaborations.</p>
-              </div>
-            </div>
-          </section>
+          <section class="section contact" id="contact" aria-labelledby="contact-heading">
+
+              <p class="section-title">Contact</p>
+
+              <h2 class="section-heading" id="contact-heading">
+                  Let's Build Something Amazing Together
+              </h2>
+
+              <p class="section-copy">
+                  Have a project, startup, or idea? Send me a message and I'll get back to you as soon as possible.
+              </p>
+
+              <form id="contact-form" class="contact-form">
+
+                  <div class="form-group">
+                      <input
+                          type="text"
+                          name="from_name"
+                          placeholder="Your Name"
+                          required>
+                  </div>
+
+                  <div class="form-group">
+                      <input
+                          type="email"
+                          name="from_email"
+                          placeholder="Email Address"
+                          required>
+                  </div>
+
+                  <div class="form-group">
+                      <input
+                          type="text"
+                          name="subject"
+                          placeholder="Subject"
+                          required>
+                  </div>
+
+                  <div class="form-group">
+                      <textarea
+                          name="message"
+                          rows="6"
+                          placeholder="Write your message..."
+                          required></textarea>
+                  </div>
+
+                  <button
+                      class="button button--primary"
+                      type="submit"
+                      id="sendBtn">
+                      Send Message
+                  </button>
+
+              </form>
+
+              <p id="form-status"></p>
+
+            </section>
         </main>
 
         <footer class="footer">
@@ -423,6 +466,7 @@
         </footer>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="assets/js/main.js" defer></script>
     <div class="custom-cursor">
     <img src="assets/images/cursor-face.png" alt="Custom cursor"></div>
