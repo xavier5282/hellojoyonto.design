@@ -1,47 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://hellojoyonto.design/</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/</loc>
+    </url>
 
-<url>
-<loc>https://hellojoyonto.design/about.html</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/about.html</loc>
+    </url>
 
-<url>
-<loc>https://hellojoyonto.design/portfolio.html</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/portfolio.html</loc>
+    </url>
 
-<url>
-<loc>https://hellojoyonto.design/services.html</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/services.html</loc>
+    </url>
 
-<url>
-<loc>https://hellojoyonto.design/resume.html</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/courses.html</loc>
+    </url>
 
-<url>
-<loc>https://hellojoyonto.design/blog.html</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/uiux-design.html</loc>
+    </url>
 
-<url>
-<loc>https://hellojoyonto.design/contact.html</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/resume.html</loc>
+    </url>
 
-<url>
-<loc>https://hellojoyonto.design/projects/gameguard-vpn.html</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/blog.html</loc>
+    </url>
 
-<url>
-<loc>https://hellojoyonto.design/projects/compro-health.html</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/contact.html</loc>
+    </url>
 
-<url>
-<loc>https://hellojoyonto.design/projects/juptee.html</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/projects/gameguard-vpn.html</loc>
+    </url>
 
-<url>
-<loc>https://hellojoyonto.design/projects/beautylab-ai.html</loc>
-</url>
+    <url>
+        <loc>https://hellojoyonto.design/projects/compro-health.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hellojoyonto.design/projects/juptee.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hellojoyonto.design/projects/beautylab-ai.html</loc>
+    </url>
+
+    <url>
+    <loc>https://hellojoyonto.design/graphic-design.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hellojoyonto.design/web-design.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hellojoyonto.design/video-animation.html</loc>
+    </url>
+
+    <url>
+        <loc>https://hellojoyonto.design/digital-marketing.html</loc>
+    </url>
 
 </urlset>
