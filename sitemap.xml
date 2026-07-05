@@ -2,72 +2,108 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+    <!-- Home -->
     <url>
         <loc>https://hellojoyonto.design/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
     </url>
 
+    <!-- About -->
     <url>
         <loc>https://hellojoyonto.design/about.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
     </url>
 
+    <!-- Portfolio -->
     <url>
         <loc>https://hellojoyonto.design/portfolio.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
     </url>
 
+    <!-- Services -->
     <url>
         <loc>https://hellojoyonto.design/services.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
+    <!-- Learning Hub -->
     <url>
         <loc>https://hellojoyonto.design/courses.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
 
+    <!-- UI/UX Course -->
     <url>
         <loc>https://hellojoyonto.design/uiux-design.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
+    <!-- Resume -->
     <url>
         <loc>https://hellojoyonto.design/resume.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 
+    <!-- Blog -->
     <url>
         <loc>https://hellojoyonto.design/blog.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 
+    <!-- Contact -->
     <url>
         <loc>https://hellojoyonto.design/contact.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
     </url>
 
+    <!-- Project: GameGuard VPN -->
     <url>
         <loc>https://hellojoyonto.design/projects/gameguard-vpn.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
 
+    <!-- Project: Compro Health -->
     <url>
         <loc>https://hellojoyonto.design/projects/compro-health.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
 
+    <!-- Project: Juptee -->
     <url>
         <loc>https://hellojoyonto.design/projects/juptee.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
 
+    <!-- Project: BeautyLab AI -->
     <url>
         <loc>https://hellojoyonto.design/projects/beautylab-ai.html</loc>
-    </url>
-
-    <url>
-    <loc>https://hellojoyonto.design/graphic-design.html</loc>
-    </url>
-
-    <url>
-        <loc>https://hellojoyonto.design/web-design.html</loc>
-    </url>
-
-    <url>
-        <loc>https://hellojoyonto.design/video-animation.html</loc>
-    </url>
-
-    <url>
-        <loc>https://hellojoyonto.design/digital-marketing.html</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
     </url>
 
 </urlset>
