@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enroll in This Course | Joyonto Rozario</title>
+    <meta name="description" content="Premium enrollment experience for the Learning Hub course page." />
+    <meta name="theme-color" content="#050505" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page">
+      <div class="page-inner">
+        <header class="topbar">
+          <a class="topbar__brand" href="index.html" aria-label="Joyonto Rozario home">JOYONTO <span>ROZARIO</span></a>
+          <button class="topbar__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
+            <span></span>
+          </button>
+          <nav class="topbar__nav" id="primary-navigation" aria-label="Primary navigation">
+            <a href="index.html#about">About</a>
+            <a href="index.html#case-studies">Work</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#insights">Insights</a>
+            <a href="courses.html" class="topbar__nav-link topbar__nav-link--featured">
+              Learning Hub
+              <span class="topbar__nav-badge">NEW</span>
+            </a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+        </header>
+
+        <main id="main" class="enroll-page">
+          <section class="section enroll-hero">
+            <div class="enroll-hero__content">
+              <p class="section-title">Learning Hub</p>
+              <h1>Enroll in This Course</h1>
+              <p>Reserve your place in a premium, hands-on course built for modern creative growth.</p>
+            </div>
+          </section>
+
+          <section class="section enroll-grid">
+            <div class="enroll-stack">
+              <article class="enroll-card enroll-card--course">
+                <div class="enroll-card__thumb">
+                  <img src="assets/images/ui-ux-design-course.jpg" alt="UI/UX Design Bootcamp" />
+                </div>
+                <div class="enroll-card__content">
+                  <span class="course-pill">UI/UX Design</span>
+                  <h2>UI/UX Design Bootcamp</h2>
+                  <div class="course-details">
+                    <div><span>Duration</span><strong>22 Hours</strong></div>
+                    <div><span>Total Lessons</span><strong>70+</strong></div>
+                    <div><span>Level</span><strong>Intermediate</strong></div>
+                    <div><span>Price</span><strong>$149</strong></div>
+                  </div>
+                </div>
+              </article>
+
+              <form class="enroll-card enroll-card--form" id="enrollment-form">
+                <input type="hidden" name="course" value="UI/UX Design Bootcamp">
+                <div class="enroll-card__header">
+                  <p class="section-title">Student Information</p>
+                  <h3>Complete Your Enrollment</h3>
+                </div>
+
+                <div class="form-grid">
+                  <label class="form-group">
+                    <span>Full Name</span>
+                    <input type="text" name="student_name" placeholder="Your full name" required />
+                  </label>
+                  <label class="form-group">
+                    <span>Email Address</span>
+                    <input type="email" name="student_email" placeholder="you@example.com" required />
+                  </label>
+                  <label class="form-group">
+                    <span>Phone Number</span>
+                    <input type="tel" name="phone" placeholder="+880 1XXX XXXXX" required />
+                  </label>
+                  <label class="form-group">
+                    <span>Country</span>
+                    <input type="text" name="country" placeholder="Bangladesh" required />
+                  </label>
+                  <label class="form-group form-group--full">
+                    <span>Coupon Code</span>
+                    <input type="text" name="coupon" placeholder="Optional" />
+                  </label>
+                  <input type="checkbox" name="terms" required />
+                </div>
+
+                <div class="payment-block">
+                  <p class="payment-title">Payment Method</p>
+                  <div class="payment-grid" aria-label="Payment methods">
+                    <button class="payment-card" type="button">SSLCommerz</button>
+                    <button class="payment-card" type="button">bKash</button>
+                    <button class="payment-card" type="button">Nagad</button>
+                    <button class="payment-card" type="button">Rocket</button>
+                    <button class="payment-card" type="button">Visa / Mastercard</button>
+                  </div>
+                </div>
+
+                <label class="terms-row">
+                  <input type="checkbox" name="terms" required />
+                  <span>I agree to the Terms & Conditions.</span>
+                </label>
+
+                <button class="button button--primary enroll-submit" type="submit">Complete Enrollment</button>
+                <div class="form-success" id="enrollment-success" role="status" aria-live="polite" hidden>
+                  Thank you! Your enrollment request has been received. We will contact you shortly.
+                </div>
+              </form>
+            </div>
+
+            <aside class="enroll-sidebar">
+              <div class="enroll-card enroll-card--summary">
+                <div class="enroll-card__header">
+                  <p class="section-title">Order Summary</p>
+                  <h3>Payment Breakdown</h3>
+                </div>
+
+                <div class="summary-row">
+                  <span>Course Price</span>
+                  <strong>$149</strong>
+                </div>
+                <div class="summary-row">
+                  <span>Discount</span>
+                  <strong>$0</strong>
+                </div>
+                <div class="summary-row summary-row--total">
+                  <span>Total</span>
+                  <strong>$149</strong>
+                </div>
+              </div>
+            </aside>
+          </section>
+        </main>
+
+        <footer class="footer">
+          <div class="footer__top">
+            <div>Joyonto Rozario © 2026</div>
+            <div class="footer-social" aria-label="Social media links">
+              <a href="https://www.behance.net/joyontorozario" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+              <a href="https://www.linkedin.com/in/joyonto-rozario/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/joyontorozario0/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://github.com/xavier5282" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://facebook.com/joyontorozario0" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__meta">UI/UX Designer • Product Designer • Brand Identity Designer</div>
+            <div class="footer-links">
+              <a href="about.html">About</a>
+              <a href="index.html#case-studies">Portfolio</a>
+              <a href="index.html#services">Services</a>
+              <a href="index.html#contact">Contact</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/main.js" defer></script>
+        <script>
+            emailjs.init("OYjRQdCtjB1hsrT-Z");
+
+            const enrollForm = document.getElementById("enrollment-form");
+            enrollForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const btn = document.querySelector(".enroll-submit");
+                const status = document.getElementById("enrollment-success");
+                btn.disabled = true;
+                btn.innerHTML = "Sending...";
+                emailjs.sendForm(
+                    "service_hxcx4vz",
+                    "template_e62wxak",
+                    this
+                )
+                .then(() => {
+
+                    status.hidden = false;
+                    status.style.color = "#4ade80";
+                    status.innerHTML = "✅ Thank you! Your enrollment request has been sent successfully.";
+
+                    this.reset();
+
+                    btn.disabled = false;
+                    btn.innerHTML = "Complete Enrollment";
+
+                })
+                .catch((error) => {
+
+                    console.log(error);
+
+                    status.hidden = false;
+                    status.style.color = "#ff4d4f";
+                    status.innerHTML = "❌ Failed to send enrollment request.";
+
+                    btn.disabled = false;
+                    btn.innerHTML = "Complete Enrollment";
+
+                });
+
+            });
+            
+        </script>
+  </body>
+</html>
