@@ -243,9 +243,9 @@ body::before {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #d4af37;
+  color: #ff6b35;
   font-weight: 700;
-  text-shadow: 0 0 12px rgba(212, 175, 55, 0.16);
+  text-shadow: 0 0 12px rgba(255, 107, 53, 0.16);
 }
 
 .topbar__nav-link--featured::after {
@@ -278,7 +278,7 @@ body::before {
   justify-content: center;
   padding: 3px 8px;
   border-radius: 999px;
-  background: #d4af37;
+  background: #ff6b35;
   color: #050505;
   font-size: 0.64rem;
   font-weight: 800;
@@ -1232,7 +1232,7 @@ body::before {
   }
 
   .hero__headline {
-    font-size: clamp(3rem, 10vw, 4.5rem);
+    font-size: clamp(3rem, 10vw, 3.5rem);
   }
 
   .feature-heading {
