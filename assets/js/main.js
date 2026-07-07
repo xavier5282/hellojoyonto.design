@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.querySelector('.topbar__toggle');
   const nav = document.querySelector('.topbar__nav');
 
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+
   if (toggleButton && nav) {
     const setMenuState = (isOpen) => {
       nav.classList.toggle('open', isOpen);
@@ -70,6 +74,75 @@ document.addEventListener('DOMContentLoaded', () => {
       button.setAttribute('aria-expanded', String(isOpen));
     });
   });
+
+  document.querySelectorAll('.roadmap-card').forEach((card) => {
+    const button = card.querySelector('.roadmap-card__toggle');
+    if (!button) {
+      return;
+    }
+
+    button.addEventListener('click', () => {
+      const isOpen = card.classList.toggle('is-open');
+      button.setAttribute('aria-expanded', String(isOpen));
+      button.querySelector('span').textContent = isOpen ? 'Collapse' : 'Expand';
+    });
+  });
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      const valueEl = entry.target;
+      const hasTarget = Object.prototype.hasOwnProperty.call(valueEl.dataset, 'target');
+      if (!hasTarget) {
+        statObserver.unobserve(valueEl);
+        return;
+      }
+
+      const target = Number(valueEl.dataset.target || 0);
+      const suffix = valueEl.dataset.suffix || '';
+      const duration = 1200;
+      const startTime = performance.now();
+
+      const animate = (currentTime) => {
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const nextValue = Math.floor(target * eased);
+        valueEl.textContent = `${nextValue}${suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          valueEl.textContent = `${target}${suffix}`;
+        }
+      };
+
+      requestAnimationFrame(animate);
+      statObserver.unobserve(valueEl);
+    });
+  }, { threshold: 0.6 });
+
+  document.querySelectorAll('.roadmap-stat__value').forEach((item) => statObserver.observe(item));
+
+  const roadmapStats = document.querySelectorAll('.roadmap-stat');
+  const statRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      const delay = index * 70;
+      setTimeout(() => {
+        entry.target.classList.add('is-visible');
+      }, delay);
+
+      statRevealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.2 });
+
+  roadmapStats.forEach((stat) => statRevealObserver.observe(stat));
 
   document.querySelectorAll('.button, .play-button, .faq-question, .topbar__nav a, .topbar__toggle, .footer-social a, .footer-links a').forEach((element) => {
     element.addEventListener('click', (event) => {
