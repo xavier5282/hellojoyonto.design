@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123f70">
+<meta name="author" content="Joyonto Rozario">
+<meta name="description" content="PINOMINOS Game UI/UX case study by Joyonto Rozario, a UI/UX Designer and Game UI Designer. Explore the mobile game interface, wireframes, UI assets, visual system, final screens, and Figma interaction prototype.">
+<meta name="keywords" content="Joyonto Rozario, UI UX Designer, Game UI Designer, Game UX, PINOMINOS, mobile game UI, mobile game UX, game interface design, Figma game design, UI UX case study, game design portfolio, Bangladesh UI UX designer">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="googlebot" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PINOMINOS — Game UI/UX Case Study by Joyonto Rozario">
+<meta property="og:description" content="A complete mobile game UI/UX case study by Joyonto Rozario covering gameplay UI, character selection, wireframes, UI assets, final screens and interaction prototype.">
+<meta property="og:site_name" content="Joyonto Rozario — UI/UX Designer">
+<meta property="og:image" content="assets/page-1.jpg">
+<meta property="og:image:alt" content="PINOMINOS Game UI/UX case study cover designed by Joyonto Rozario">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PINOMINOS — Game UI/UX Case Study by Joyonto Rozario">
+<meta name="twitter:description" content="Explore the PINOMINOS mobile game UI/UX case study by Joyonto Rozario.">
+<meta name="twitter:image" content="assets/page-1.jpg">
+<meta name="twitter:image:alt" content="PINOMINOS Game UI/UX case study cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>PINOMINOS Game UI/UX Case Study | Joyonto Rozario</title>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CreativeWork",
+  "name":"PINOMINOS — Game UI/UX Case Study",
+  "description":"Mobile game UI/UX design case study covering information architecture, wireframes, UI assets, visual design, final screens and interactive prototyping.",
+  "author":{
+    "@type":"Person",
+    "name":"Joyonto Rozario",
+    "jobTitle":"UI/UX Designer"
+  },
+  "creator":{
+    "@type":"Person",
+    "name":"Joyonto Rozario",
+    "jobTitle":"UI/UX Designer"
+  },
+  "keywords":"PINOMINOS, Game UI, Game UX, Mobile Game Design, UI/UX Design, Figma",
+  "inLanguage":"en",
+  "genre":"Game UI/UX Design"
+}
+</script>
+<style>
+:root{
+  --ink:#123f70;
+  --blue:#3396ff;
+  --deep:#192aba;
+  --pink:#f5f5fb;
+  --red:#ff3b3b;
+  --yellow:#ffc333;
+  --green:#22c55e;
+  --muted:#6685a1;
+  --paper:#f7fbff;
+  --white:#fff;
+  --line:#d9eaf7;
+  --shadow:0 18px 50px rgba(25,72,110,.10);
+  --radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.65;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1180px,92%);margin:auto}
+.nav{
+  position:fixed;top:18px;left:50%;transform:translateX(-50%);
+  width:min(1120px,92%);z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 18px;background:rgba(255,255,255,.82);
+  backdrop-filter:blur(18px);border:1px solid rgba(180,210,232,.75);
+  border-radius:999px;box-shadow:0 12px 35px rgba(35,80,120,.10)
+}
+.brand{font-weight:900;letter-spacing:.03em}
+.brand span{color:var(--blue)}
+.navlinks{display:flex;gap:18px;font-size:13px;font-weight:700}
+.navlinks a{text-decoration:none;opacity:.8}
+.navlinks a:hover{opacity:1;color:var(--blue)}
+.hero{
+  min-height:100vh;padding:150px 0 80px;
+  background:
+    radial-gradient(circle at 78% 22%,rgba(51,150,255,.22),transparent 27%),
+    radial-gradient(circle at 15% 70%,rgba(34,197,94,.10),transparent 25%),
+    linear-gradient(180deg,#f7fcff 0%,#fff 72%);
+  overflow:hidden;position:relative;
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border-radius:50%;filter:blur(1px);pointer-events:none
+}
+.hero:before{width:430px;height:430px;background:rgba(92,205,255,.12);right:-100px;top:160px}
+.hero:after{width:260px;height:260px;background:rgba(255,195,51,.09);left:-90px;bottom:40px}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:50px;align-items:center}
+.kicker{
+  display:inline-flex;align-items:center;gap:9px;border:1px solid #b7d3e7;
+  padding:8px 15px;border-radius:999px;font-size:13px;font-weight:800;
+  color:#426b89;background:#fff
+}
+.kicker i{width:10px;height:10px;border-radius:50%;background:var(--blue);display:inline-block}
+h1{
+  font-size:clamp(58px,9vw,112px);line-height:.86;margin:28px 0 25px;
+  letter-spacing:-.065em;color:var(--deep)
+}
+.hero h1 span{color:var(--blue)}
+.lead{font-size:20px;max-width:650px;color:#52738d}
+.meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:32px}
+.meta{padding:15px 17px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.8)}
+.meta b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#6b8ba5}
+.meta span{font-weight:800}
+.hero-art{position:relative}
+.hero-art img{border-radius:30px;box-shadow:var(--shadow);border:1px solid #e4eef6}
+.float{
+  position:absolute;padding:12px 16px;border-radius:15px;background:#fff;
+  box-shadow:0 14px 35px rgba(30,80,120,.14);font-size:12px;font-weight:900
+}
+.f1{left:-25px;top:8%}.f2{right:-20px;bottom:12%}
+.section{padding:105px 0}
+.section.alt{background:var(--paper)}
+.section-head{max-width:800px;margin-bottom:45px}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:900;color:var(--blue)}
+h2{font-size:clamp(38px,5vw,64px);line-height:1.03;letter-spacing:-.045em;margin:10px 0 18px}
+h3{font-size:23px;margin:0 0 10px}
+.section-head p{font-size:18px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  padding:28px;border:1px solid var(--line);border-radius:var(--radius);
+  background:#fff;box-shadow:0 10px 35px rgba(40,90,125,.05)
+}
+.card .num{font-weight:900;font-size:13px;color:var(--blue);margin-bottom:30px}
+.card p{margin:0;color:#64829b}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.copy p{color:#64829b;font-size:17px}
+.bullets{padding:0;margin:25px 0 0;list-style:none}
+.bullets li{margin:13px 0;padding-left:27px;position:relative}
+.bullets li:before{content:"";position:absolute;left:0;top:.7em;width:9px;height:9px;border-radius:50%;background:var(--blue)}
+.statbar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:35px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px}
+.stat strong{font-size:27px;display:block}
+.stat small{color:#7692a8}
+.image-card{
+  background:#fff;border:1px solid var(--line);border-radius:30px;padding:12px;
+  box-shadow:var(--shadow)
+}
+.image-card img{border-radius:20px}
+.caption{font-size:12px;color:#6e8ca2;padding:13px 8px 3px}
+.process{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.step{position:relative;padding:22px 15px;background:#fff;border:1px solid var(--line);border-radius:18px}
+.step b{font-size:12px;color:var(--blue)}
+.step h3{font-size:17px;margin-top:8px}
+.step p{font-size:13px;color:#718da3;margin:0}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.gallery .wide{grid-column:1/-1}
+.gallery .image-card{padding:10px}
+.quote{
+  margin:45px 0;padding:35px 40px;border-radius:28px;
+  background:linear-gradient(135deg,#e8f6ff,#f8fbff);border:1px solid #cde6f7;
+  font-size:25px;font-weight:800;letter-spacing:-.02em
+}
+.quote span{display:block;font-size:13px;font-weight:700;color:#6c8aa1;margin-top:15px}
+.timeline{display:grid;gap:12px}
+.timeline-row{display:grid;grid-template-columns:90px 1fr;gap:25px;align-items:start;padding:22px 0;border-bottom:1px solid var(--line)}
+.timeline-row strong{color:var(--blue)}
+.final-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.final-grid .image-card:nth-child(1){grid-column:span 2}
+.cta{
+  padding:100px 0;background:linear-gradient(135deg,#0d3f74,#1a56a8);
+  color:#fff;text-align:center
+}
+.cta h2{max-width:800px;margin:0 auto 20px}
+.cta p{max-width:650px;margin:0 auto 30px;color:#d8ebfb}
+.btn{
+  display:inline-flex;padding:14px 20px;border-radius:999px;background:#fff;
+  color:#124274;text-decoration:none;font-weight:900
+}
+footer{padding:30px 0;background:#0a315b;color:#bcd5e9;font-size:13px}
+footer .container{display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s ease}
+.reveal.is-visible{opacity:1;transform:none}
+.designer-credit{margin:18px 0 0;color:#53758f;font-size:14px}
+.designer-panel{
+  margin:30px 0 0;padding:24px 28px;border:1px solid #cfe5f5;border-radius:24px;
+  background:linear-gradient(135deg,#f2faff,#fff);display:flex;align-items:center;
+  justify-content:space-between;gap:25px
+}
+.designer-panel h3{margin:5px 0 2px;font-size:25px}
+.designer-panel p{margin:0;color:#6b899f}
+.designer-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.designer-tags span{
+  padding:7px 11px;border-radius:999px;background:#fff;border:1px solid #d7eaf7;
+  color:#47718f;font-size:12px;font-weight:800
+}
+img{height:auto}
+:focus-visible{outline:3px solid #3396ff;outline-offset:4px;border-radius:6px}
+@media(max-width:900px){
+  .navlinks{display:none}
+  .hero-grid,.split{grid-template-columns:1fr}
+  .hero{padding-top:120px}
+  .cards,.final-grid{grid-template-columns:1fr 1fr}
+  .process{grid-template-columns:repeat(3,1fr)}
+  .statbar{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .nav{top:10px;padding:10px 15px}
+  .hero{min-height:auto;padding:105px 0 60px}
+  h1{font-size:clamp(52px,18vw,82px)}
+  .lead{font-size:17px}
+  .hero-art{margin-top:15px}
+  .float{display:none}
+  .designer-panel{flex-direction:column;align-items:flex-start;padding:22px}
+  .designer-tags{justify-content:flex-start}
+  .section{padding:75px 0}
+  .cards,.gallery,.final-grid{grid-template-columns:1fr}
+  .gallery .wide,.final-grid .image-card:nth-child(1){grid-column:auto}
+  .process{grid-template-columns:1fr 1fr}
+  .meta-grid{grid-template-columns:1fr}
+  .timeline-row{grid-template-columns:60px 1fr}
+  .quote{font-size:20px;padding:25px}
+  footer .container{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="#top">PINO<span>MINOS</span></a>
+  <div class="navlinks">
+    <a href="#overview">Overview</a>
+    <a href="#process">Process</a>
+    <a href="#wireframes">Wireframes</a>
+    <a href="#assets">UI Assets</a>
+    <a href="#final">Final UI</a>
+    <a href="#prototype">Prototype</a>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="kicker"><i></i> GAME UI/UX REDESIGN · BY JOYONTO ROZARIO</div>
+      <h1>PINO<span>MINOS</span></h1>
+      <p class="lead">A colorful mobile game interface designed around strategic gameplay, character interaction, and playful visual storytelling.</p>
+      <p class="designer-credit"><strong>Designed by Joyonto Rozario</strong> · UI/UX Designer &amp; Game UI Designer</p>
+      <div class="meta-grid">
+        <div class="meta"><b>Role</b><span>UI/UX Designer · Game UI Designer</span></div>
+        <div class="meta"><b>Platform</b><span>Mobile · iOS & Android</span></div>
+        <div class="meta"><b>Tools</b><span>Figma · Photoshop</span></div>
+        <div class="meta"><b>Focus</b><span>Game UI · Visual Design · Interaction</span></div>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <img src="assets/images/game-pinominos.jpg" alt="PINOMINOS mobile game UI/UX project cover designed by Joyonto Rozario" fetchpriority="high" decoding="async">
+      <div class="float f1">DESIGN · PLAY · INTERACT</div>
+      <div class="float f2">Small characters. Big battles.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="overview">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">01 — Project Overview</div>
+      <h2>Designing a game experience that feels as playful as the gameplay.</h2>
+      <p>PINOMINOS combines colorful characters, physics-based combat, strategic matching, progression, and a chaotic 3D world. The UI needed to make all of those systems understandable without losing the personality of the game.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal"><div class="num">01 / GAMEPLAY</div><h3>Physics-based combat</h3><p>Launch characters through a physics-driven battle system and create satisfying enemy interactions.</p></article>
+      <article class="card reveal"><div class="num">02 / CHARACTERS</div><h3>Distinct teams</h3><p>Six recognizable characters create clear team identities and make selection feel meaningful.</p></article>
+      <article class="card reveal"><div class="num">03 / PROGRESSION</div><h3>Strategy & growth</h3><p>Players collect rewards, build their army, upgrade, and continue through increasingly challenging rounds.</p></article>
+    </div>
+    <div class="designer-panel reveal">
+      <div>
+        <div class="eyebrow">Designer</div>
+        <h3>Joyonto Rozario</h3>
+        <p>UI/UX Designer · Game UI Designer</p>
+      </div>
+      <div class="designer-tags">
+        <span>Game UI</span><span>UX Design</span><span>Visual Design</span><span>Figma</span><span>Photoshop</span>
+      </div>
+    </div>
+    <div class="statbar reveal">
+      <div class="stat"><strong>6</strong><small>Core characters</small></div>
+      <div class="stat"><strong>3</strong><small>Team factions</small></div>
+      <div class="stat"><strong>7</strong><small>Primary flow stages</small></div>
+      <div class="stat"><strong>1</strong><small>Unified visual language</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container split">
+    <div class="copy reveal">
+      <div class="eyebrow">02 — The Challenge</div>
+      <h2>Make a complex game feel instantly understandable.</h2>
+      <p>The experience contains gameplay stats, lives, rounds, enemies, teams, characters, missions, rewards, purchases, settings, and progression. The design challenge was to organize those systems into a visual hierarchy that players could scan quickly during fast-paced gameplay.</p>
+      <ul class="bullets">
+        <li>Reduce cognitive load during combat.</li>
+        <li>Make characters and team identity immediately recognizable.</li>
+        <li>Create consistent interaction patterns across the game.</li>
+        <li>Balance playful visuals with readable information.</li>
+      </ul>
+    </div>
+    <div class="image-card reveal"><img src="assets/page-2.jpg" alt="PINOMINOS game concept and features" loading="lazy" decoding="async"></div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">03 — PINOMINOS UI/UX Design Process</div>
+      <h2>From structure to interaction, one layer at a time.</h2>
+      <p>The project moved from information architecture and wireframes into a complete visual system, final screens, and an interactive prototype.</p>
+    </div>
+    <div class="process">
+      <div class="step reveal"><b>01</b><h3>Discover</h3><p>Understand game mechanics, characters, progression and monetization.</p></div>
+      <div class="step reveal"><b>02</b><h3>Structure</h3><p>Map the major screens and navigation relationships.</p></div>
+      <div class="step reveal"><b>03</b><h3>Wireframe</h3><p>Define hierarchy, placement, actions and feedback.</p></div>
+      <div class="step reveal"><b>04</b><h3>Visualize</h3><p>Build characters, icons, typography and color language.</p></div>
+      <div class="step reveal"><b>05</b><h3>Prototype</h3><p>Connect the core flow and micro-interactions in Figma.</p></div>
+      <div class="step reveal"><b>06</b><h3>Refine</h3><p>Improve clarity, consistency and presentation quality.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="wireframes">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">04 — Wireframes</div>
+      <h2>Structuring the game experience before adding visual polish.</h2>
+      <p>Low-fidelity wireframes established the information hierarchy for the home screen, gameplay, profile, missions, shop, upgrades, and account areas.</p>
+    </div>
+    <div class="image-card reveal">
+      <img src="assets/page-3.jpg" alt="PINOMINOS wireframes" loading="lazy" decoding="async">
+      <div class="caption">Digital wireframes — navigation, screen hierarchy, gameplay information and commerce structure.</div>
+    </div>
+    <div class="quote reveal">“First make the experience understandable. Then make it memorable.”<span>Design principle used throughout the project</span></div>
+  </div>
+</section>
+
+<section class="section" id="assets">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">05 — PINOMINOS UI Assets &amp; Visual Design</div>
+      <h2>Building a visual language players can recognize at a glance.</h2>
+      <p>The asset system connects characters, icons, typography and color into one playful visual identity.</p>
+    </div>
+    <div class="gallery">
+      <div class="image-card wide reveal">
+        <img src="assets/page-4.jpg" alt="PINOMINOS UI assets" loading="lazy" decoding="async">
+        <div class="caption">Characters, game icons, typography and color palette.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container split">
+    <div class="copy reveal">
+      <div class="eyebrow">06 — Visual System</div>
+      <h2>Bright, bold, readable, and intentionally playful.</h2>
+      <p>The visual system uses high-contrast team colors, expressive character artwork, bold display typography, rounded UI components, and clear action states.</p>
+      <ul class="bullets">
+        <li><b>Blue:</b> primary interface and navigation language.</li>
+        <li><b>Red:</b> combat, enemy and warning states.</li>
+        <li><b>Green:</b> positive actions and the green faction.</li>
+        <li><b>Yellow:</b> rewards, highlights and premium emphasis.</li>
+      </ul>
+    </div>
+    <div class="image-card reveal"><img src="assets/page-4.jpg" alt="PINOMINOS visual system" loading="lazy" decoding="async"></div>
+  </div>
+</section>
+
+<section class="section" id="final">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">07 — Final PINOMINOS Game UI Screens</div>
+      <h2>Bringing the PINOMINOS experience to life.</h2>
+      <p>The final screens combine the established visual language, character system, gameplay mechanics and progression structure into a cohesive mobile game experience.</p>
+    </div>
+    <div class="image-card reveal">
+      <img src="assets/page-5.jpg" alt="PINOMINOS final UI master screens" loading="lazy" decoding="async">
+      <div class="caption">Final UI / Master Screens — gameplay, character selection, character introduction, results and shop.</div>
+    </div>
+    <div class="final-grid" style="margin-top:24px">
+      <div class="card reveal"><div class="num">SCREEN 01</div><h3>Gameplay Interface</h3><p>Score, lives, round indicator, enemy state and attack controls remain visible without overpowering the action.</p></div>
+      <div class="card reveal"><div class="num">SCREEN 02</div><h3>Character Selection</h3><p>Team cards and character choices create a clear decision point before combat.</p></div>
+      <div class="card reveal"><div class="num">SCREEN 03</div><h3>Character Introduction</h3><p>Character personality, role and team identity are introduced before the player enters the battle.</p></div>
+      <div class="card reveal"><div class="num">SCREEN 04</div><h3>Round Results</h3><p>Battle statistics, captured units, rewards and continuation actions are grouped into one results moment.</p></div>
+      <div class="card reveal"><div class="num">SCREEN 05</div><h3>Shop & Monetization</h3><p>Currency, packs, premium items and restore-purchase actions follow a consistent card-based system.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="prototype">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">08 — Figma Interaction Prototype &amp; Game UX</div>
+      <h2>From screen to interactive experience.</h2>
+      <p>The prototype connects gameplay, character selection, progression, monetization and settings into a seamless user journey.</p>
+    </div>
+    <div class="image-card reveal">
+      <img src="assets/page-6.jpg" alt="PINOMINOS interaction prototype and user flow" loading="lazy" decoding="async">
+      <div class="caption">Prototype flow — Home → Team → Character → Gameplay → Results → Shop → Next Round.</div>
+    </div>
+    <div class="timeline" style="margin-top:35px">
+      <div class="timeline-row reveal"><strong>01</strong><div><h3>Home / Main Menu</h3><p>Enter the game, review key status information, and start the journey.</p></div></div>
+      <div class="timeline-row reveal"><strong>02</strong><div><h3>Choose Team</h3><p>Explore the factions and select the preferred team.</p></div></div>
+      <div class="timeline-row reveal"><strong>03</strong><div><h3>Select Character</h3><p>Choose a character and understand their role before battle.</p></div></div>
+      <div class="timeline-row reveal"><strong>04</strong><div><h3>Gameplay / Attack</h3><p>Match, aim, launch and receive visual feedback from the battle.</p></div></div>
+      <div class="timeline-row reveal"><strong>05</strong><div><h3>Round Results</h3><p>Review performance, collect rewards and decide what happens next.</p></div></div>
+      <div class="timeline-row reveal"><strong>06</strong><div><h3>Shop / Upgrade</h3><p>Use rewards to upgrade characters and access premium items.</p></div></div>
+      <div class="timeline-row reveal"><strong>07</strong><div><h3>Next Round</h3><p>Continue the adventure and face the next challenge.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">09 — Design Decisions</div>
+      <h2>Why the interface works as one system.</h2>
+    </div>
+    <div class="cards">
+      <article class="card reveal"><div class="num">01 / HIERARCHY</div><h3>Gameplay first</h3><p>Critical combat information stays close to the action while secondary systems remain accessible.</p></article>
+      <article class="card reveal"><div class="num">02 / CONSISTENCY</div><h3>Reusable components</h3><p>Cards, buttons, badges, colors and typography repeat across screens to reduce learning effort.</p></article>
+      <article class="card reveal"><div class="num">03 / FEEDBACK</div><h3>Clear state changes</h3><p>Warnings, rewards, selections and results use strong visual changes so actions feel responsive.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container split">
+    <div class="copy reveal">
+      <div class="eyebrow">10 — Outcome</div>
+      <h2>A complete game UI case study, from concept to prototype.</h2>
+      <p>The project demonstrates a full UI/UX workflow for a mobile game: information architecture, wireframing, visual design, asset creation, final screens and interactive prototyping.</p>
+      <ul class="bullets">
+        <li>Established a cohesive game visual language.</li>
+        <li>Designed a connected player journey across core screens.</li>
+        <li>Created a reusable UI asset and component direction.</li>
+        <li>Translated game mechanics into clear interface patterns.</li>
+      </ul>
+    </div>
+    <div class="image-card reveal"><img src="assets/page-6.jpg" alt="PINOMINOS prototype outcome" loading="lazy" decoding="async"></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container reveal">
+    <div class="eyebrow" style="color:#a9d8ff">11 — Closing</div>
+    <h2>Design. Play. Interact.</h2>
+    <p>PINOMINOS was designed as a playful system where visual personality and usability work together — helping players understand the game while keeping every interaction energetic.</p>
+    <a class="btn" href="#top">Back to top ↑</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>PINOMINOS · Game UI/UX Case Study · Mobile Game Design</span>
+    <span>Designed by Joyonto Rozario · UI/UX Designer</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const items = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12});
+  items.forEach(item=>observer.observe(item));
+})();
+</script>
+</body>
+</html>
